@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Akademik - Daftar Akun</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="login-page-body">
+
+    <main class="split-login-container">
+        <div class="login-left bg-daftar">
+            <div class="login-left-content">
+                <div class="logo-top-right">
+                    <img src="https://kampusmerdeka.kemdikbud.go.id/logo-kampus-merdeka.png" alt="Kampus MALAKA"
+                        style="width: 120px; filter: brightness(0) invert(1);">
+                </div>
+
+                <div class="welcome-text">
+                    <h1>Halo!</h1>
+                    <p>Mari Bergabung di Portal Malaka</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="login-right">
+            <div class="login-role-card" style="max-width: 500px; max-height: 95vh; overflow-y: auto;">
+                <div class="card-header-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/4/44/Logo_Universitas_Mikroskil.png/300px-Logo_Universitas_Mikroskil.png"
+                        alt="Logo Universitas Mikroskil">
+                </div>
+
+                <div class="card-body-role">
+                    <h2 style="text-align: center; margin-bottom: 24px;">Daftar Akun Mahasiswa</h2>
+
+                    <form action="01-login.html" method="GET">
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <input type="text" id="nama" class="form-control" placeholder="Nama Lengkap" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <input type="text" id="nim" class="form-control" placeholder="NIM" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <input type="email" id="email" class="form-control" placeholder="Email" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <input type="password" id="password" class="form-control" placeholder="Password" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <input type="password" id="konfirmasi_password" class="form-control"
+                                placeholder="Konfirmasi Password" required>
+                        </div>
+
+                        <div class="form-group prodi-input-group" style="margin-bottom: 16px;">
+                            <span class="prodi-label">Program Studi</span>
+                            <select id="prodi" class="form-control prodi-select" required>
+                                <option value="" disabled selected>Pilih Program Studi</option>
+                                <option value="ti">Teknik Informatika</option>
+                                <option value="si">Sistem Informasi</option>
+                                <option value="te">Teknologi Informasi</option>
+                                <option value="mn">Manajemen</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 24px;">
+                            <select id="angkatan" class="form-control" required>
+                                <option value="" disabled selected>Pilih Tahun Angkatan</option>
+                                <option value="2026">2026</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                                <option value="2020">2020</option>
+                                <option value="2019">2019</option>
+                                <option value="2018">2018</option>
+                                <option value="2017">2017</option>
+                                <option value="2016">2016</option>
+                                <option value="2015">2015</option>
+                                <option value="2014">2014</option>
+                                <option value="2013">2013</option>
+                                <option value="2012">2012</option>
+                                <option value="2011">2011</option>
+                                <option value="2010">2010</option>
+                            </select>
+                        </div>
+                </div>
+
+                <button type="submit" class="btn btn-blue w-100">Daftar</button>
+                </form>
+
+                <div class="auth-footer" style="text-align: center; margin-top: 20px; font-size: 0.95rem;">
+                    Sudah punya akun? <a href="01-login.html"
+                        style="color: var(--primary-blue); font-weight: 800;">Login</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
