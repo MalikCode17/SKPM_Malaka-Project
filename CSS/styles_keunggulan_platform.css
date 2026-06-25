@@ -1,0 +1,421 @@
+/* ========================================================
+   1. RESET, VARIABEL & UTILITAS DASAR
+======================================================== */
+:root {
+    --primary-blue: #185a9d;
+    --secondary-blue: #2475c0;
+    --accent-orange: #f89e1b;
+    --bg-light-blue: #f0f7ff;
+    --bg-white: #ffffff;
+    --text-dark: #2d3748;
+    --text-gray: #64748b;
+    --footer-bg: #2d3748;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-light-blue);
+    line-height: 1.6;
+    padding-top: 70px;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.text-blue {
+    color: var(--primary-blue);
+}
+
+/* Tombol Dasar */
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline-blue {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+}
+
+.btn-outline-blue:hover {
+    background-color: var(--bg-white);
+}
+
+/* ========================================================
+   2. HEADER & NAVIGASI STICKY 
+======================================================== */
+.navbar {
+    background-color: var(--primary-blue);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li a {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: white;
+}
+
+.nav-menu li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.nav-login-btn {
+    padding: 8px 24px !important;
+    background-color: var(--accent-orange);
+    color: white !important;
+}
+
+/* Hamburger Menu Mobile */
+.nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* ========================================================
+   3. JUDUL HALAMAN
+======================================================== */
+.form-header-title {
+    text-align: center;
+    padding: 100px 20px 40px 20px;
+}
+
+.form-header-title h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.form-header-title p {
+    color: var(--accent-orange);
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+/* ========================================================
+   4. KONTEN DETAIL FITUR (KIRI TEKS, KANAN KARTU)
+======================================================== */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+}
+
+.detail-hero-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 32px;
+}
+
+.detail-heading {
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.detail-paragraph {
+    color: var(--text-dark);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+}
+
+.detail-list {
+    padding-left: 24px;
+    margin-bottom: 32px;
+}
+
+.detail-list li {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    list-style-type: disc;
+}
+
+/* Kartu Informasi Melayang (Sticky) */
+.sticky-info-card {
+    position: sticky;
+    top: 100px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.info-kegiatan-box {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-kegiatan-box h4 {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.info-table {
+    width: 100%;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+}
+
+.info-table td {
+    padding: 8px 0;
+    color: var(--text-dark);
+}
+
+.info-table td:first-child {
+    font-weight: 800;
+    width: 110px;
+}
+
+.kuota-bar {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* ========================================================
+   5. ORNAMEN GELOMBANG (MENYATU KE FOOTER)
+======================================================== */
+.scenery-ornament {
+    width: 100%;
+    line-height: 0;
+    margin-bottom: -2px;
+    /* Mencegah celah garis putih tipis di atas footer */
+    position: relative;
+    z-index: 1;
+}
+
+.scenery-ornament svg {
+    display: block;
+    /* Menghilangkan spasi bawah bawaan tag inline browser */
+    width: 100%;
+    height: auto;
+}
+
+/* ========================================================
+   6. FOOTER
+======================================================== */
+.footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 40px 0 20px 0;
+    position: relative;
+    z-index: 2;
+    /* Memastikan isi footer tidak tertutup gelombang */
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+/* ========================================================
+   7. MEDIA QUERY (RESPONSIF MOBILE & TABLET)
+======================================================== */
+@media (max-width: 768px) {
+
+    /* Navbar Responsif */
+    .logo {
+        max-width: 75%;
+        font-size: 1rem;
+    }
+
+    .navbar-inner {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 70px;
+        padding: 10px 0;
+    }
+
+    .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 10;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-blue);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        gap: 0;
+    }
+
+    .nav-toggle:checked~.nav-menu {
+        display: flex;
+    }
+
+    .nav-menu li {
+        align-items: flex-start;
+        margin-bottom: 4px;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 10px 24px;
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .nav-menu li a.active::after {
+        display: none;
+    }
+
+    /* Layout Konten Menjadi 1 Kolom */
+    .detail-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px;
+    }
+
+    /* Footer */
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-header-title h1 {
+        font-size: 1.8rem;
+    }
+}
