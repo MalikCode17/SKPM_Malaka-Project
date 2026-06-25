@@ -1,0 +1,565 @@
+/* ========================================================
+   1. RESET, VARIABEL & UTILITAS DASAR
+======================================================== */
+:root {
+    --primary-blue: #185a9d;
+    --secondary-blue: #2475c0;
+    --accent-orange: #f89e1b;
+    --orange-hover: #e08b15;
+    --bg-light-blue: #f0f7ff;
+    --bg-white: #ffffff;
+    --text-dark: #2d3748;
+    --text-gray: #64748b;
+    --footer-bg: #2d3748;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    padding-top: 70px;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+/* Tombol Utama */
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-orange { background-color: var(--accent-orange); color: white; }
+.btn-orange:hover { background-color: var(--orange-hover); color: white; }
+.btn-blue { background-color: var(--primary-blue); color: white; }
+.btn-blue:hover { background-color: var(--secondary-blue); color: white; }
+
+/* ========================================================
+   2. HEADER & NAVIGASI STICKY
+======================================================== */
+.navbar {
+    background-color: var(--primary-blue);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu li a {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: white;
+}
+
+.nav-menu li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.nav-login-btn {
+    padding: 8px 24px!important;
+}
+
+/* Hamburger Menu untuk Mobile */
+.nav-toggle { display: none; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+.hamburger span { width: 24px; height: 3px; background-color: white; border-radius: 2px; transition: 0.3s; }
+
+/* ========================================================
+   3. HERO SECTION (BAGIAN ATAS)
+======================================================== */
+.hero-tentang {
+    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('/images/foto_tentang.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 120px 0 280px 0;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    margin: 0 auto 32px auto;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Gelombang Bawah Hero */
+.hero-wave {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    line-height: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+    mask-image: linear-gradient(to bottom, transparent 0%, black 60%);
+}
+
+.hero-wave svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ========================================================
+   4. VISI MISI (KATEGORI CARD)
+======================================================== */
+.categories {
+    padding: 80px 0 60px 0;
+    background-color: var(--bg-white);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.category-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2.2rem;
+}
+
+.icon-1 { background-color: #e0f2fe; color: #0284c7; }
+.icon-2 { background-color: #fef3c7; color: #d97706; }
+.icon-3 { background-color: #fee2e2; color: #dc2626; }
+.icon-4 { background-color: #dcfce7; color: #16a34a; }
+
+.category-card h3 {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.card-text {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+/* ========================================================
+   5. TIM PENGEMBANG KAMI
+======================================================== */
+.team-section {
+    padding: 80px 0;
+    background-color: var(--bg-light-blue);
+}
+
+.team-group-card {
+    display: flex;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+    margin-bottom: 40px;
+}
+
+.team-group-img {
+    flex: 1;
+    min-height: 300px;
+}
+
+.team-group-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-group-text {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team-members-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.member-card {
+    background: white;
+    border-radius: 16px;
+    padding: 32px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.member-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px auto;
+    border: 4px solid var(--bg-light-blue);
+}
+
+.member-name {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    font-weight: 800;
+    margin-bottom: 4px;
+}
+
+.member-role {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    background-color: #e0f2fe;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.member-desc {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* ========================================================
+   6. CALL TO ACTION (CTA) & ORNAMEN GELOMBANG
+======================================================== */
+.cta-section {
+    padding: 60px 0 0 0;
+    text-align: center;
+    background-color: var(--bg-white);
+    position: relative;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 40px;
+}
+
+.cta-section h2 {
+    font-size: 1.75rem;
+    color: var(--text-dark);
+    font-weight: 800;
+    margin-bottom: 24px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+.scenery-ornament {
+    width: 100%;
+    line-height: 0;
+    margin-bottom: -2px; /* Mencegah munculnya garis putih tipis di atas footer */
+}
+
+.scenery-ornament svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ========================================================
+   7. FOOTER
+======================================================== */
+.footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 40px 0 20px 0;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.footer-item i {
+    font-size: 1.25rem;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+/* ========================================================
+   8. MEDIA QUERY (RESPONSIF UNTUK TABLET & HP)
+======================================================== */
+@media (max-width: 1024px) {
+   .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+   .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Penyesuaian Navbar Mobile */
+   .logo {
+        max-width: 75%;
+        font-size: 1rem;
+    }
+    
+   .navbar-inner {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 70px;
+        padding: 10px 0;
+    }
+    
+   .hamburger {
+        display: flex;
+        position: relative;
+        z-index: 10;
+    }
+
+   .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-blue);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        gap: 0;
+    }
+
+   .nav-toggle:checked ~.nav-menu {
+        display: flex;
+    }
+
+   .nav-menu li {
+        align-items: flex-start;
+        margin-bottom: 4px;
+    }
+
+   .nav-menu li a {
+        display: block;
+        padding: 10px 24px;
+        border-radius: 0;
+        width: 100%;
+    }
+
+   .nav-menu li a.active::after {
+        display: none;
+    }
+
+    /* Penyesuaian Konten Mobile */
+   .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+   .hero-content p {
+        margin: 0 auto 30px auto;
+    }
+
+   .hero-buttons {
+        justify-content: center;
+    }
+
+    /* Penyesuaian Bagian Tim */
+   .team-group-card {
+        flex-direction: column;
+    }
+
+   .team-members-grid {
+        grid-template-columns: 1fr;
+    }
+
+   .team-group-text {
+        padding: 24px;
+    }
+
+    /* Penyesuaian Footer */
+   .footer-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+   .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+   .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+   .hero-buttons,
+   .cta-buttons {
+        flex-direction: column;
+    }
+
+   .btn {
+        width: 100%;
+    }
+}
