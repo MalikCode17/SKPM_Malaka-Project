@@ -1,0 +1,529 @@
+/* ========================================================
+   1. RESET & CSS VARIABLES 
+======================================================== */
+:root {
+    --primary-blue: #185a9d;
+    --secondary-blue: #2475c0;
+    --accent-orange: #f89e1b;
+    --orange-hover: #e08b15;
+    --bg-light-blue: #f0f7ff;
+    --bg-white: #ffffff;
+    --text-dark: #2d3748;
+    --text-gray: #64748b;
+    --footer-bg: #2d3748;
+    --border-color: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+    line-height: 1.6;
+    padding-top: 70px;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+/* ========================================================
+   2. HEADER & STICKY NAVBAR 
+======================================================== */
+.navbar {
+    background-color: var(--primary-blue);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.logo i {
+    font-size: 1.6rem;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 24px;
+
+}
+
+.nav-menu li a {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+    color: white;
+}
+
+.nav-menu li a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+/* Styling Tombol */
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-orange {
+    background-color: var(--accent-orange);
+    color: white;
+}
+
+.btn-orange:hover {
+    background-color: var(--orange-hover);
+    color: white;
+}
+
+.btn-blue {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-blue:hover {
+    background-color: var(--secondary-blue);
+    color: white;
+}
+
+.nav-login-btn {
+    padding: 8px 24px !important;
+}
+
+/* Checkbox Hack untuk Mobile */
+.nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+
+/* ========================================================
+   3. HERO SECTION
+======================================================== */
+.hero {
+    /* Menambahkan foto1.jpg sebagai background dengan lapisan gelap agar teks putih tetap terbaca */
+    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../images/foto_beranda.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 120px 0 160px 0;
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Memposisikan konten di tengah */
+}
+
+.hero-content {
+    max-width: 800px;
+    z-index: 2;
+    text-align: center;
+    /* Membuat teks rata tengah */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #ffffff;
+    /* Mengubah teks judul menjadi putih */
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: #e2e8f0;
+    /* Mengubah teks paragraf menjadi putih pudar */
+    font-size: 1.1rem;
+    margin: 0 auto 32px auto;
+    max-width: 90%;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    /* Memastikan tombol rata tengah */
+    gap: 16px;
+}
+
+/* ========================================================
+   HALAMAN FORMULIR PENDAFTARAN KEGIATAN SPESIFIK
+======================================================== */
+.form-header-title {
+    text-align: center;
+    padding: 50px 20px 30px 20px;
+}
+
+.form-header-title h1 {
+    color: var(--text-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.form-header-title p {
+    color: var(--text-gray);
+    font-size: 1.05rem;
+}
+
+.registration-card {
+    background: white;
+    max-width: 600px;
+    margin: 0 auto 80px auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    border: 1px solid var(--border-color);
+    padding: 40px;
+}
+
+.registration-illustration {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.registration-illustration img {
+    width: 180px; /* Menentukan lebar foto */
+    height: 180px; /* Tinggi disamakan agar foto proporsional */
+    object-fit: cover; /* Sangat penting: mencegah foto Anda menjadi gepeng atau penyok */
+    
+    /* Efek Bentuk Organik (Estetik & Tidak Kaku) */
+    border-radius: 20%;
+    
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan lembut */
+    mix-blend-mode: normal; /* Mengembalikan warna asli foto Anda */
+}
+
+/* Desain Kotak Input dengan Ikon di Kiri dan Kanan */
+.custom-input-group {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    overflow: hidden;
+    background: white;
+}
+
+.custom-input-group.icon-side {
+    background: #f8fafc;
+    padding: 12px 16px;
+    color: #64748b;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-input-group.icon-side.right {
+    border-right: none;
+    border-left: 1px solid var(--border-color);
+}
+
+.custom-input-group input {
+    flex: 1;
+    border: none;
+    padding: 12px 16px;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.custom-input-group input:focus {
+    background-color: #f0f9ff; /* Efek biru tipis saat diketik */
+}
+
+/* Kotak Informasi & Kuota */
+.info-kegiatan-box {
+    background: #f8fafc;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-kegiatan-box h4 {
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.info-table {
+    width: 100%;
+    font-size: 0.95rem;
+    position: relative;
+    z-index: 2;
+}
+
+.info-table td {
+    padding: 4px 0;
+    color: var(--text-dark);
+}
+
+.info-table td:first-child {
+    font-weight: 800;
+    width: 140px;
+}
+
+/* Ikon Map Latar Belakang Transparan */
+.info-icon-bg {
+    position: absolute;
+    bottom: 16px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--primary-blue);
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.kuota-bar {
+    background-color: #55b776; /* Warna hijau indikator */
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Barisan Tombol Bawah */
+.action-buttons-row {
+    display: flex;
+    gap: 16px;
+}
+
+.action-buttons-row.btn {
+    flex: 1; /* Membuat kedua tombol membagi ruang 50:50 */
+    text-align: center;
+    padding: 14px 0;
+    font-size: 1.05rem;
+}
+
+.action-buttons-row {
+        flex-direction: column; /* Tombol atas bawah di HP */
+    }
+   .registration-card {
+        padding: 30px 20px; /* Padding lebih kecil di HP */
+    }
+
+
+/* ========================================================
+   7. FOOTER
+======================================================== */
+.footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: 40px 0 20px 0;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+}
+
+.footer-item i {
+    font-size: 1.25rem;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+
+/* ========================================================
+   8. MEDIA QUERY RESPONSIF
+======================================================== */
+
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-blue);
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-toggle:checked~.nav-menu {
+        display: flex;
+    }
+
+    .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-content p {
+        margin: 0 auto 30px auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* --- INI ADALAH KODE YANG DITAMBAHKAN --- */
+    /* Mengubah formulir & peta menjadi 1 baris lurus ke bawah di HP */
+    .form-map-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons,
+    .cta-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
