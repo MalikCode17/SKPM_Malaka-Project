@@ -4,334 +4,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pendaftaran Kegiatan Mahasiswa - Kegiatan</title>
+    <meta name="description" content="Daftar seluruh kegiatan kampus MALAKA - Seminar, Lomba, Organisasi, dan Pelatihan.">
+    <title>Kegiatan - Sistem Pendaftaran Kegiatan Mahasiswa MALAKA</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_kegiatan.css">
 </head>
 
 <body class="bg-light-blue-body">
 
-    <header class="navbar">
+    <!-- ===== NAVIGASI ===== -->
+    <header class="navbar" role="banner">
         <div class="container navbar-inner">
-            <a href="03-index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
+            <a href="03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
             </a>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle">
-            <label for="navToggle" class="hamburger">
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-menu">
-                <li><a href="03-index.html">Beranda</a></li>
-                <li><a href="04-kegiatan.html" class="active">Kegiatan</a></li>
-                <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="06-tentang.html">Tentang</a></li>
-                <li><a href="07-kontak.html">Kontak</a></li>
-                <li><a href="01-login.html" class="btn btn-orange nav-login-btn">Logout</a></li>
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <ul>
+                    <li><a href="03-index.html">Beranda</a></li>
+                    <li><a href="04-kegiatan.html" class="active" aria-current="page">Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="06-tentang.html">Tentang</a></li>
+                    <li><a href="07-kontak.html">Kontak</a></li>
+                    <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="kegiatan-header-section">
+    <!-- ===== KONTEN UTAMA ===== -->
+    <main id="main-content">
+
+        <!-- Filter Kategori -->
+        <section class="kegiatan-header-section" aria-label="Filter Kegiatan">
             <div class="container kegiatan-header-inner">
                 <div class="filter-wrapper">
-                    <input type="checkbox" id="kategoriToggle" class="kategori-toggle">
-                    <label for="kategoriToggle" class="filter-box">
-                        <span>Kategori:</span>
-                        <i class="fas fa-chevron-down arrow-icon"></i>
+                    <input type="checkbox" id="kategoriToggle" class="kategori-toggle" aria-hidden="true">
+                    <label for="kategoriToggle" class="filter-box" id="btn-filter-kategori">
+                        <i class="fas fa-filter" aria-hidden="true"></i>
+                        <span>Filter Kategori</span>
+                        <i class="fas fa-chevron-down arrow-icon" aria-hidden="true"></i>
                     </label>
-
-                    <ul class="kategori-dropdown">
-                        <li><a href="#">Semua Kegiatan</a></li>
-                        <li><a href="/kegiatan_kategori/01-kegiatan-seminar.html">Seminar & Workshop</a></li>
-                        <li><a href="/kegiatan_kategori/02-kegiatan-lomba.html">Lomba Akademik</a></li>
-                        <li><a href="/kegiatan_kategori/03-kegiatan-organisasi.html">Organisasi Mahasiswa</a></li>
-                        <li><a href="/kegiatan_kategori/04-kegiatan-pelatihan.html">Pelatihan Soft Skill</a></li>
+                    <ul class="kategori-dropdown" role="menu" aria-label="Pilih kategori kegiatan">
+                        <li role="none"><a href="04-kegiatan.html" role="menuitem">Semua Kegiatan</a></li>
+                        <li role="none"><a href="kegiatan_kategori/01-kegiatan-seminar.html" role="menuitem">Seminar &amp; Workshop</a></li>
+                        <li role="none"><a href="kegiatan_kategori/02-kegiatan-lomba.html" role="menuitem">Lomba Akademik</a></li>
+                        <li role="none"><a href="kegiatan_kategori/03-kegiatan-organisasi.html" role="menuitem">Organisasi Mahasiswa</a></li>
+                        <li role="none"><a href="kegiatan_kategori/04-kegiatan-pelatihan.html" role="menuitem">Pelatihan Soft Skill</a></li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section class="kegiatan-main-section">
-            <div class="container kegiatan-layout">
-                <div class="activities-grid content-grid">
+        <!-- Daftar Semua Kegiatan -->
+        <section class="kegiatan-main-section" aria-labelledby="kegiatan-all-heading">
+            <div class="container">
+                <h1 class="section-title" id="kegiatan-all-heading">Semua Kegiatan Mahasiswa</h1>
+                <div class="kegiatan-layout">
+                    <div class="activities-grid content-grid">
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-green">TERBARU</span>
-                        <h3>Workshop UI/UX Design</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 10 Juli 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Aula Fakultas</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 50 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/01-pendaftaran-seminar.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/01-detail-seminar.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <!-- Seminar & Workshop -->
+                        <article class="activity-card relative-card">
+                            <span class="badge-status bg-green">TERBARU</span>
+                            <h3>Workshop UI/UX Design</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>10 Juli 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Aula Fakultas</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 50 Peserta</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/01-pendaftaran-seminar.html" class="btn btn-orange" id="btn-daftar-uiux">Daftar</a>
+                                <a href="detail_kegiatan/01-detail-seminar.html" class="btn btn-blue" id="btn-detail-uiux">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Workshop Logika & DOM JavaScript</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 12 Mei 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Lab Komputer 2</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 45 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/01-pendaftaran-seminar.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/01-detail-seminar.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status">POPULER</span>
+                            <h3>Workshop Logika &amp; DOM JavaScript</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>12 Mei 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Lab Komputer 2</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 45 Peserta</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/01-pendaftaran-seminar.html" class="btn btn-orange" id="btn-daftar-js">Daftar</a>
+                                <a href="detail_kegiatan/01-detail-seminar.html" class="btn btn-blue" id="btn-detail-js">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-red">PENUH</span>
-                        <h3>Seminar Kewirausahaan</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 15 Juli 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Gedung Serba Guna</li>
-                            <li><i class="fas fa-lock"></i> Kuota: <span class="text-red">Penuh</span></li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-outline-blue"><i class="fas fa-lock"></i> Daftar</a>
-                            <a href="#" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status bg-red">PENUH</span>
+                            <h3>Seminar Kewirausahaan</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>15 Juli 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Gedung Serba Guna</span></li>
+                                <li><i class="fas fa-lock" aria-hidden="true"></i><span>Kuota: <span class="text-red">Penuh</span></span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-outline-blue" id="btn-daftar-kwu" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
+                                <a href="#" class="btn btn-blue" id="btn-detail-kwu">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Seminar Modul Spesifik S/4HANA</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 10 Mei 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Auditorium Kampus</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 150 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/01-pendaftaran-seminar.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/01-detail-seminar.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status">POPULER</span>
+                            <h3>Seminar Modul Spesifik S/4HANA</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>10 Mei 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Auditorium Kampus</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 150 Peserta</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/01-pendaftaran-seminar.html" class="btn btn-orange" id="btn-daftar-sap">Daftar</a>
+                                <a href="detail_kegiatan/01-detail-seminar.html" class="btn btn-blue" id="btn-detail-sap">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Seminar Business Continuity Planning</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 15 Mei 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Ruang Teater</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 100 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/01-pendaftaran-seminar.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/01-detail-seminar.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <!-- Lomba -->
+                        <article class="activity-card relative-card">
+                            <span class="badge-status bg-green">TERBARU</span>
+                            <h3>Lomba Pengembangan Aplikasi</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>20 Juli 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Lab Komputer</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 30 Tim</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-app">Daftar</a>
+                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-app">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-green">TERBARU</span>
-                        <h3>Lomba Pengembangan Aplikasi</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 20 Juli 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Lab Komputer</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 30 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/02-detail-lomba.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status">POPULER</span>
+                            <h3>Business Case Supply Chain &amp; BCP</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>25 Juni 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Aula Utama</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 40 Tim</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-bcp">Daftar</a>
+                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-bcp">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Business Case Supply Chain & BCP</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 25 Juni 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Aula Utama</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 40 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/02-detail-lomba.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status bg-green">TERBARU</span>
+                            <h3>Lomba Debat Nasional</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>3 September 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Online (Zoom)</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 20 Tim</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-debat">Daftar</a>
+                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-debat">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Hackathon Frontend Web Dev</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 25 April 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Lab Komputer 1</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 50 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/02-detail-lomba.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status">POPULER</span>
+                            <h3>Hackathon Frontend Web Dev</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>25 April 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Lab Komputer 1</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 50 Tim</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-hackathon">Daftar</a>
+                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-hackathon">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-green">TERBARU</span>
-                        <h3>Lomba Debat Nasional</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 3 September 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Online (Zoom)</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 20 Tim</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/02-detail-lomba.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <!-- Organisasi -->
+                        <article class="activity-card relative-card">
+                            <span class="badge-status">POPULER</span>
+                            <h3>Open Recruitment BEM</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>15 Agustus 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Gedung Kemahasiswaan</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 30 Peserta</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Organisasi Mahasiswa</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/03-pendaftaran-organisasi.html" class="btn btn-orange" id="btn-daftar-bem">Daftar</a>
+                                <a href="detail_kegiatan/03-detail-organisasi.html" class="btn btn-blue" id="btn-detail-bem">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Open Recruitment BEM</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 15 Agustus 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Gedung Kemahasiswaan</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 30 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/03-pendaftaran-organisasi.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/03-detail-organisasi.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status bg-red">PENUH</span>
+                            <h3>Open Recruitment Himpunan Mahasiswa</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>22–24 April 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Sekretariat Organisasi</span></li>
+                                <li><i class="fas fa-lock" aria-hidden="true"></i><span>Kuota: <span class="text-red">Penuh</span></span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Organisasi Mahasiswa</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-outline-blue" id="btn-daftar-hima" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
+                                <a href="#" class="btn btn-blue" id="btn-detail-hima">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-red">PENUH</span>
-                        <h3>Open Recruitment Himpunan Mahasiswa</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 22-24 April 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Sekretariat Organisasi</li>
-                            <li><i class="fas fa-lock"></i> Kuota: <span class="text-red">Penuh</span></li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-outline-blue"><i class="fas fa-lock"></i> Daftar</a>
-                            <a href="#" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <!-- Pelatihan -->
+                        <article class="activity-card relative-card">
+                            <span class="badge-status">POPULER</span>
+                            <h3>Pelatihan Public Speaking</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>5 Agustus 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Auditorium</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 25 Peserta</span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="pendaftaran_kegiatan/04-pendaftaran-pelatihan.html" class="btn btn-orange" id="btn-daftar-speaking">Daftar</a>
+                                <a href="detail_kegiatan/04-detail-pelatihan.html" class="btn btn-blue" id="btn-detail-speaking">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-green">TERBARU</span>
-                        <h3>Pendaftaran UKM Olahraga</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 25 Agustus 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Lapangan Kampus</li>
-                            <li><i class="fas fa-lock"></i> Kuota: Terbuka untuk Umum</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/03-pendaftaran-organisasi.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/03-detail-organisasi.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
+                        <article class="activity-card relative-card">
+                            <span class="badge-status bg-red">PENUH</span>
+                            <h3>Bootcamp Dasar Data Analytics</h3>
+                            <ul class="activity-details">
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>1–3 Juni 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Lab Komputer 3</span></li>
+                                <li><i class="fas fa-lock" aria-hidden="true"></i><span>Kuota: <span class="text-red">Penuh</span></span></li>
+                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
+                            </ul>
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-outline-blue" id="btn-daftar-bootcamp" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
+                                <a href="#" class="btn btn-blue" id="btn-detail-bootcamp">Detail</a>
+                            </div>
+                        </article>
 
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-red">PENUH</span>
-                        <h3>Bootcamp Dasar Data Analytics</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 1-3 Juni 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Lab Komputer 3</li>
-                            <li><i class="fas fa-lock"></i> Kuota: <span class="text-red">Penuh</span></li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-outline-blue"><i class="fas fa-lock"></i> Daftar</a>
-                            <a href="#" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
-
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Pelatihan Public Speaking</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 5 Agustus 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Auditorium</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 25 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/04-pendaftaran-pelatihan.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/04-detail-pelatihan.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
-
-                    <div class="activity-card relative-card">
-                        <span class="badge-status">POPULAR</span>
-                        <h3>Pelatihan Kepemimpinan</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 25 Juli 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Ruang Seminar</li>
-                            <li><i class="fas fa-lock"></i> Kuota: 40 Peserta</li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/04-pendaftaran-pelatihan.html"
-                                class="btn btn-orange">Daftar</a>
-                            <a href="/detail_kegiatan/04-detail-pelatihan.html" class="btn btn-blue">Detail</a>
-                        </div>
-                    </div>
-
-                    <div class="activity-card relative-card">
-                        <span class="badge-status bg-red">PENUH</span>
-                        <h3>Pelatihan Analisis Data</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 10 Agustus 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lokasi: Lab Komputer</li>
-                            <li><i class="fas fa-lock"></i> Kuota: <span class="text-red">Penuh</span></li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-outline-blue"><i class="fas fa-lock"></i> Daftar</a>
-                            <a href="#" class="btn btn-blue">Detail</a>
-                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="scenery-ornament">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
-                    style="height: 150px;">
-                    <path fill="#34d399" opacity="0.5"
-                        d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
-                    <path fill="#10b981" opacity="0.8"
-                        d="M0,200 C200,100 500,250 800,120 C1100,-10 1300,150 1440,160 L1440,200 L0,200 Z"></path>
-                    <path fill="#2d3748"
-                        d="M0,200 C400,150 800,250 1200,160 C1350,130 1400,180 1440,190 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
         </section>
+
+        <div class="scenery-ornament" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
+                style="height: 150px;">
+                <path fill="#34d399" opacity="0.5"
+                    d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
+                <path fill="#10b981" opacity="0.8"
+                    d="M0,200 C200,100 500,250 800,120 C1100,-10 1300,150 1440,160 L1440,200 L0,200 Z"></path>
+                <path fill="#2d3748"
+                    d="M0,200 C400,150 800,250 1200,160 C1350,130 1400,180 1440,190 L1440,200 L0,200 Z"></path>
+            </svg>
+        </div>
     </main>
 
-    <footer class="footer">
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email: malaka.education@kampus.ac.id</span>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>malaka.education@kampus.ac.id</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram : @malaka.edu</span>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@malaka.edu</span>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Sistem Kegiatan Mahasiswa
-            </div>
+            <p class="copyright">&copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.</p>
         </div>
     </footer>
 
