@@ -4,69 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Akademik - Login</title>
+    <meta name="description" content="Login ke Portal MALAKA - Sistem Pendaftaran Kegiatan Mahasiswa">
+    <title>Login - Portal MALAKA</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body class="login-page-body">
 
     <main class="split-login-container">
-        <div class="login-left">
+
+        <!-- Sisi Kiri: Gambar & Sambutan -->
+        <section class="login-left" aria-label="Sambutan Portal MALAKA">
             <div class="login-left-content">
                 <div class="logo-top-right">
-                    <img src="https://kampusmerdeka.kemdikbud.go.id/logo-kampus-merdeka.png" alt="Kampus Merdeka"
-                        style="width: 120px; filter: brightness(0) invert(1);">
+                    <img src="images/Logo_Malaka_Education_Tulisan.png"
+                        alt="Logo MALAKA Education"
+                        style="width: 110px;">
                 </div>
-
                 <div class="welcome-text">
                     <h1>Halo!</h1>
                     <p>Selamat Datang di Portal MALAKA</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="login-right">
-            <div class="login-role-card">
+        <!-- Sisi Kanan: Form Login -->
+        <section class="login-right" aria-label="Form Login">
+            <article class="login-role-card">
                 <div class="card-header-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/id/thumb/4/44/Logo_Universitas_Mikroskil.png/300px-Logo_Universitas_Mikroskil.png"
-                        alt="Logo Universitas Mikroskil">
+                    <img src="images/Logo_Malaka_Education.png"
+                        alt="Logo Universitas MALAKA Education">
                 </div>
 
                 <div class="card-body-role">
-                    <h2 style="text-align: center; margin-bottom: 24px;">Login Mahasiswa</h2>
+                    <h2>Login Mahasiswa</h2>
 
-                    <form action="03-index.html" method="GET">
+                    <form action="03-index.html" method="GET" style="margin-top: 24px;">
                         <div class="form-group auth-group">
                             <label for="email">Email / Username</label>
-                            <input type="text" id="email" class="form-control" placeholder="Masukkan email" required>
+                            <input type="text" id="email" class="form-control"
+                                placeholder="Masukkan email atau username" required>
                         </div>
 
                         <div class="form-group auth-group">
                             <label for="password">Password</label>
-                            <input type="password" id="password" class="form-control" placeholder="Masukkan password"
-                                required>
+                            <input type="password" id="password" class="form-control"
+                                placeholder="Masukkan password" required>
                         </div>
 
                         <div class="auth-options">
                             <label class="remember-me">
-                                <input type="checkbox" name="remember"> Remember Me
+                                <input type="checkbox" name="remember" id="remember">
+                                Ingat Saya
                             </label>
                             <a href="#" class="forgot-password">Lupa Password?</a>
                         </div>
-                        <button type="submit" class="btn btn-blue w-100" style="margin-top: 24px;">Login</button>
+
+                        <button type="submit" id="btn-login" class="btn btn-blue w-100"
+                            style="margin-top: 24px;">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </button>
                     </form>
 
-                    <div class="auth-footer" style="text-align: center; margin-top: 20px; font-size: 0.95rem;">
-                        Belum punya akun? <a href="02-registrasi.html"
-                            style="color: var(--primary-blue); font-weight: 800;">Daftar</a>
+                    <div class="auth-footer">
+                        Belum punya akun?
+                        <a href="02-registrasi.html">Daftar Sekarang</a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </article>
+        </section>
+
     </main>
 
 </body>
