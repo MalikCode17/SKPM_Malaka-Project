@@ -4,161 +4,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pendaftaran Kegiatan Mahasiswa - Pendaftaran</title>
+    <meta name="description" content="Panduan dan daftar kegiatan yang membuka pendaftaran di Portal MALAKA.">
+    <title>Pendaftaran - Sistem Pendaftaran Kegiatan Mahasiswa MALAKA</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_pendaftaran.css">
 </head>
 
 <body>
 
-    <header class="navbar">
+    <!-- ===== NAVIGASI ===== -->
+    <header class="navbar" role="banner">
         <div class="container navbar-inner">
-            <a href="03-index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
+            <a href="03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
             </a>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle">
-            <label for="navToggle" class="hamburger">
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-menu">
-                <li><a href="03-index.html">Beranda</a></li>
-                <li><a href="04-kegiatan.html">Kegiatan</a></li>
-                <li><a href="05-pendaftaran.html" class="active">Pendaftaran</a></li>
-                <li><a href="06-tentang.html">Tentang</a></li>
-                <li><a href="07-kontak.html">Kontak</a></li>
-                <li><a href="01-login.html" class="btn btn-orange nav-login-btn">Logout</a></li>
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <ul>
+                    <li><a href="03-index.html">Beranda</a></li>
+                    <li><a href="04-kegiatan.html">Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html" class="active" aria-current="page">Pendaftaran</a></li>
+                    <li><a href="06-tentang.html">Tentang</a></li>
+                    <li><a href="07-kontak.html">Kontak</a></li>
+                    <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero hero-pendaftaran">
+    <!-- ===== KONTEN UTAMA ===== -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero hero-pendaftaran" aria-labelledby="hero-pendaftaran-heading">
             <div class="container hero-inner">
                 <div class="hero-content">
-                    <h1>Pendaftaran Kegiatan<br>Mahasiswa Terbuka!</h1>
-                    <p>Halaman ini menampilkan daftar kegiatan kampus yang saat ini menerima pendaftaran. Ikuti langkah
-                        mudah di bawah ini untuk mengamankan tempat Anda.</p>
+                    <h1 id="hero-pendaftaran-heading">
+                        Pendaftaran Kegiatan<br>Mahasiswa Terbuka!
+                    </h1>
+                    <p>
+                        Halaman ini menampilkan kegiatan kampus yang sedang menerima pendaftaran.
+                        Ikuti langkah mudah di bawah ini untuk mengamankan tempat Anda.
+                    </p>
                     <div class="hero-buttons">
-                        <a href="#langkah" class="btn btn-blue">Pelajari Langkah Daftar</a>
-                        <a href="/04-kegiatan.html" class="btn btn-orange">Mulai Mendaftar</a>
+                        <a href="#langkah" class="btn btn-blue" id="btn-pelajari-langkah">
+                            <i class="fas fa-list-ol" aria-hidden="true"></i> Langkah Daftar
+                        </a>
+                        <a href="#daftar" class="btn btn-orange" id="btn-mulai-mendaftar">
+                            <i class="fas fa-pencil-alt" aria-hidden="true"></i> Mulai Mendaftar
+                        </a>
                     </div>
                 </div>
-
-                <div class="hero-wave"
-                    style="position: absolute; bottom: -2px; left: 0; width: 100%; z-index: 1; line-height: 0;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"
-                        style="display: block; width: 100%; height: auto;">
-                        <path fill="#ffffff" fill-opacity="1"
-                            d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z">
-                        </path>
-                    </svg>
-                </div>
+            </div>
+            <div class="hero-wave" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
+                    <path fill="#ffffff" fill-opacity="1"
+                        d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z">
+                    </path>
+                </svg>
+            </div>
         </section>
 
-        <section id="langkah" class="steps-section">
+        <!-- Langkah Pendaftaran -->
+        <section id="langkah" class="steps-section" aria-labelledby="langkah-heading">
             <div class="container">
-                <h2 class="section-title">Langkah-Langkah Pendaftaran</h2>
+                <h2 class="section-title" id="langkah-heading">Langkah-Langkah Pendaftaran</h2>
                 <div class="steps-grid">
-                    <div class="step-card">
-                        <div class="step-number">1</div>
-                        <div class="step-icon icon-blue"><i class="fas fa-user-plus"></i></div>
-                        <h3>Buat Akun & Login</h3>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">2</div>
-                        <div class="step-icon icon-light-blue"><i class="fas fa-search"></i></div>
+                    <article class="step-card">
+                        <div class="step-number" aria-hidden="true">1</div>
+                        <div class="step-icon icon-blue" aria-hidden="true">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <h3>Buat Akun &amp; Login</h3>
+                        <p style="font-size: 0.8rem; color: #6b7280; margin-top: 4px;">Daftar atau masuk ke akun mahasiswa Anda</p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-number" aria-hidden="true">2</div>
+                        <div class="step-icon icon-light-blue" aria-hidden="true">
+                            <i class="fas fa-search"></i>
+                        </div>
                         <h3>Pilih Kegiatan</h3>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">3</div>
-                        <div class="step-icon icon-yellow"><i class="fas fa-file-signature"></i></div>
+                        <p style="font-size: 0.8rem; color: #6b7280; margin-top: 4px;">Temukan kegiatan yang sesuai minat Anda</p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-number" aria-hidden="true">3</div>
+                        <div class="step-icon icon-yellow" aria-hidden="true">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
                         <h3>Lengkapi Data</h3>
-                    </div>
-                    <div class="step-card">
-                        <div class="step-number">4</div>
-                        <div class="step-icon icon-green"><i class="fas fa-calendar-check"></i></div>
-                        <h3>Konfirmasi & Selesai</h3>
-                    </div>
+                        <p style="font-size: 0.8rem; color: #6b7280; margin-top: 4px;">Isi formulir pendaftaran dengan lengkap</p>
+                    </article>
+                    <article class="step-card">
+                        <div class="step-number" aria-hidden="true">4</div>
+                        <div class="step-icon icon-green" aria-hidden="true">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Konfirmasi &amp; Selesai</h3>
+                        <p style="font-size: 0.8rem; color: #6b7280; margin-top: 4px;">Terima konfirmasi pendaftaran Anda</p>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="daftar" class="activities bg-light-blue-section">
+        <!-- Kegiatan Terbuka -->
+        <section id="daftar" class="activities bg-light-blue-section" aria-labelledby="daftar-kegiatan-heading">
             <div class="container">
-                <h2 class="section-title">Daftar Kegiatan Terbuka</h2>
+                <h2 class="section-title" id="daftar-kegiatan-heading">Kegiatan Yang Membuka Pendaftaran</h2>
                 <div class="activities-grid">
 
-                    <div class="activity-card">
+                    <article class="activity-card">
                         <h3>Open Recruitment BEM</h3>
                         <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 15 Agustus 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Gedung Kemahasiswaan</li>
-                            <li><i class="fas fa-user-circle"></i> Kuota: 30 Peserta</li>
+                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>15 Agustus 2026</span></li>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Gedung Kemahasiswaan</span></li>
+                            <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 30 Peserta</span></li>
+                            <li><i class="fas fa-tag" aria-hidden="true"></i><span>Organisasi Mahasiswa</span></li>
                         </ul>
                         <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/03-pendaftaran-organisasi.html"
-                                class="btn btn-orange w-100">Daftar</a>
+                            <a href="pendaftaran_kegiatan/03-pendaftaran-organisasi.html"
+                                class="btn btn-orange w-100" id="btn-daftar-bem">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar
+                            </a>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="activity-card">
-                        <h3>Business Case Supply Chain & BCP</h3>
+                    <article class="activity-card">
+                        <h3>Business Case Supply Chain &amp; BCP</h3>
                         <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 25 Juni 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Aula Utama</li>
-                            <li><i class="fas fa-user-circle"></i> Kuota: 40 Peserta</li>
+                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>25 Juni 2026</span></li>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Aula Utama</span></li>
+                            <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 40 Tim</span></li>
+                            <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
                         </ul>
                         <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/02-pendaftaran-lomba.html"
-                                class="btn btn-orange w-100">Daftar</a>
+                            <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html"
+                                class="btn btn-orange w-100" id="btn-daftar-bcp">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar
+                            </a>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="activity-card">
+                    <article class="activity-card">
                         <h3>Bootcamp Dasar Data Analytics</h3>
                         <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 1-3 Juni 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Lab Komputer 3</li>
-                            <li><i class="fas fa-lock"></i> Kuota: <span class="text-orange">Penuh</span></li>
-                        </ul>
-                        <a href="#" class="btn btn-outline-blue"><i class="fas fa-lock"></i> Daftar</a>
-                    </div>
-
-                    <div class="activity-card">
-                        <h3>Pelatihan Public Speaking</h3>
-                        <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt"></i> Tanggal: 5 Agustus 2026</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Auditorium</li>
-                            <li><i class="fas fa-user-circle"></i> Kuota: 25 Peserta</li>
+                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>1–3 Juni 2026</span></li>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Lab Komputer 3</span></li>
+                            <li><i class="fas fa-lock" aria-hidden="true"></i><span>Kuota: <span class="text-red">Penuh</span></span></li>
+                            <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
                         </ul>
                         <div class="card-actions">
-                            <a href="/pendaftaran_kegiatan/04-pendaftaran-pelatihan.html"
-                                class="btn btn-orange w-100">Daftar</a>
+                            <a href="#" class="btn btn-outline-blue w-100" id="btn-daftar-bootcamp" aria-disabled="true">
+                                <i class="fas fa-lock" aria-hidden="true"></i> Pendaftaran Ditutup
+                            </a>
                         </div>
-                    </div>
+                    </article>
+
+                    <article class="activity-card">
+                        <h3>Pelatihan Public Speaking</h3>
+                        <ul class="activity-details">
+                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>5 Agustus 2026</span></li>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Auditorium</span></li>
+                            <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 25 Peserta</span></li>
+                            <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="pendaftaran_kegiatan/04-pendaftaran-pelatihan.html"
+                                class="btn btn-orange w-100" id="btn-daftar-speaking">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar
+                            </a>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <!-- CTA -->
+        <section class="cta-section" style="background-color: var(--bg-white);" aria-labelledby="cta-daftar-heading">
             <div class="container cta-content">
-                <h2 style="max-width: 600px; margin: 0 auto 24px auto; line-height: 1.4;">Ambil Langkah Pertama Anda
-                    Menuju Pengalaman Kampus yang Tak Terlupakan!</h2>
+                <h2 id="cta-daftar-heading">
+                    Ambil Langkah Pertama Menuju<br>Pengalaman Kampus yang Tak Terlupakan!
+                </h2>
                 <div class="cta-buttons">
-                    <a href="/07-kontak.html#faq" class="btn btn-blue">Lihat Pertanyaan Umum</a>
+                    <a href="07-kontak.html#faq" class="btn btn-blue" id="btn-lihat-faq">
+                        <i class="fas fa-question-circle" aria-hidden="true"></i> Lihat Pertanyaan Umum
+                    </a>
+                    <a href="04-kegiatan.html" class="btn btn-orange" id="btn-semua-kegiatan">
+                        <i class="fas fa-search" aria-hidden="true"></i> Semua Kegiatan
+                    </a>
                 </div>
             </div>
-
-            <div class="scenery-ornament">
+            <div class="scenery-ornament" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
                     style="height: 150px;">
                     <path fill="#34d399" opacity="0.5"
@@ -170,27 +219,27 @@
                 </svg>
             </div>
         </section>
+
     </main>
 
-    <footer class="footer">
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email: malaka.education@kampus.ac.id</span>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>malaka.education@kampus.ac.id</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram : @malaka.edu</span>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@malaka.edu</span>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Sistem Kegiatan Mahasiswa
-            </div>
+            <p class="copyright">&copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.</p>
         </div>
     </footer>
 
