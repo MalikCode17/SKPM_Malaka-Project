@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pendaftaran Kegiatan Mahasiswa - Kontak</title>
+    <meta name="description" content="Hubungi tim dukungan Portal MALAKA untuk pertanyaan atau bantuan teknis.">
+    <title>Kontak - Sistem Pendaftaran Kegiatan Mahasiswa MALAKA</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,49 +16,60 @@
 
 <body>
 
-    <header class="navbar">
+    <!-- ===== NAVIGASI ===== -->
+    <header class="navbar" role="banner">
         <div class="container navbar-inner">
-            <a href="03-index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
+            <a href="03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
             </a>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle">
-            <label for="navToggle" class="hamburger">
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-menu">
-                <li><a href="03-index.html">Beranda</a></li>
-                <li><a href="04-kegiatan.html">Kegiatan</a></li>
-                <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="06-tentang.html">Tentang</a></li>
-                <li><a href="07-kontak.html" class="active">Kontak</a></li>
-                <li><a href="01-login.html" class="btn btn-orange nav-login-btn">Logout</a></li>
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <ul>
+                    <li><a href="03-index.html">Beranda</a></li>
+                    <li><a href="04-kegiatan.html">Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="06-tentang.html">Tentang</a></li>
+                    <li><a href="07-kontak.html" class="active" aria-current="page">Kontak</a></li>
+                    <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero hero-kontak">
+    <!-- ===== KONTEN UTAMA ===== -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero hero-kontak" aria-labelledby="hero-kontak-heading">
             <div class="container hero-inner">
                 <div class="hero-content">
-                    <h1>Hubungi Tim Pendukung<br>Mahasiswa Kami</h1>
-                    <p>Kami di sini untuk membantu Anda dengan pertanyaan tentang platform, acara, atau proses
-                        pendaftaran. Silakan hubungi kami melalui salah satu saluran di bawah ini.</p>
+                    <h1 id="hero-kontak-heading">
+                        Hubungi Tim Pendukung<br>Mahasiswa Kami
+                    </h1>
+                    <p>
+                        Kami di sini untuk membantu Anda dengan pertanyaan tentang platform, acara, atau proses
+                        pendaftaran. Silakan hubungi kami melalui salah satu saluran di bawah ini.
+                    </p>
                     <div class="hero-buttons">
-                        <a href="#formulir" class="btn btn-blue">Kirim Pesan Langsung</a>
-                        <a href="#faq" class="btn btn-orange">Lihat FAQ</a>
+                        <a href="#formulir" class="btn btn-blue" id="btn-kirim-pesan">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Pesan Langsung
+                        </a>
+                        <a href="#faq" class="btn btn-orange" id="btn-lihat-faq">
+                            <i class="fas fa-question-circle" aria-hidden="true"></i> Lihat FAQ
+                        </a>
                     </div>
                 </div>
             </div>
-
-            <div class="hero-wave"
-                style="position: absolute; bottom: -2px; left: 0; width: 100%; z-index: 1; line-height: 0;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"
-                    style="display: block; width: 100%; height: auto;">
+            <div class="hero-wave" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
                     <path fill="#ffffff" fill-opacity="1"
                         d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z">
                     </path>
@@ -65,96 +77,112 @@
             </div>
         </section>
 
-        <section class="categories">
+        <!-- Saluran Kontak -->
+        <section class="categories" aria-labelledby="saluran-kontak-heading">
             <div class="container">
-                <h2 class="section-title">Informasi Saluran Kontak</h2>
+                <h2 class="section-title" id="saluran-kontak-heading">Informasi Saluran Kontak</h2>
                 <div class="categories-grid">
-                    <div class="category-card">
-                        <div class="icon-circle icon-1"><i class="fas fa-comments"></i></div>
+                    <article class="category-card">
+                        <div class="icon-circle icon-1" aria-hidden="true">
+                            <i class="fas fa-comments"></i>
+                        </div>
                         <h3>Chat WhatsApp / Dukungan Langsung</h3>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon-circle icon-2"><i class="fas fa-envelope-open-text"></i></div>
-                        <h3>Email Layanan<br>Mahasiswa</h3>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon-circle icon-3"><i class="fas fa-mobile-alt"></i></div>
-                        <h3>DM Media Sosial<br>Resmi</h3>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon-circle icon-4"><i class="fas fa-map-marked-alt"></i></div>
+                    </article>
+                    <article class="category-card">
+                        <div class="icon-circle icon-2" aria-hidden="true">
+                            <i class="fas fa-envelope-open-text"></i>
+                        </div>
+                        <h3>Email Layanan Mahasiswa</h3>
+                    </article>
+                    <article class="category-card">
+                        <div class="icon-circle icon-3" aria-hidden="true">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>DM Media Sosial Resmi</h3>
+                    </article>
+                    <article class="category-card">
+                        <div class="icon-circle icon-4" aria-hidden="true">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
                         <h3>Kunjungan Pusat Bantuan Kampus</h3>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="formulir" class="bg-light-blue-section" style="padding: 60px 0;">
+        <!-- Formulir Kontak & Peta -->
+        <section id="formulir" class="bg-light-blue-section" aria-labelledby="formulir-peta-heading">
             <div class="container">
-                <h2 class="section-title">Formulir Kontak & Peta</h2>
+                <h2 class="section-title" id="formulir-peta-heading">Formulir Kontak &amp; Peta</h2>
                 <div class="form-map-grid">
 
-                    <div class="contact-card">
-                        <h3 class="card-heading"><i class="fas fa-list-alt text-blue"></i> Kirim Pesan kepada Kami</h3>
+                    <article class="contact-card">
+                        <h3 class="card-heading"><i class="fas fa-list-alt text-blue" aria-hidden="true"></i> Kirim
+                            Pesan kepada Kami</h3>
                         <form action="#" method="POST">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Nama Lengkap" required>
+                                <label for="nama_kontak" class="visually-hidden" style="display:none;">Nama
+                                    Lengkap</label>
+                                <input type="text" id="nama_kontak" class="form-control" placeholder="Nama Lengkap"
+                                    required>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="Email Mahasiswa" required>
+                                <label for="email_kontak" class="visually-hidden" style="display:none;">Email
+                                    Mahasiswa</label>
+                                <input type="email" id="email_kontak" class="form-control" placeholder="Email Mahasiswa"
+                                    required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" rows="5" placeholder="Pesan Anda" required></textarea>
+                                <label for="pesan" class="visually-hidden" style="display:none;">Pesan Anda</label>
+                                <textarea id="pesan" class="form-control" rows="5" placeholder="Pesan Anda"
+                                    required></textarea>
                             </div>
-                            <button type="submit" class="btn btn-orange w-100">Kirim</button>
+                            <button type="submit" class="btn btn-orange w-100">
+                                <i class="fas fa-paper-plane" aria-hidden="true"></i> Kirim Pesan
+                            </button>
                         </form>
-                    </div>
+                    </article>
 
-                    <div class="contact-card">
-                        <a href="https://maps.app.goo.gl/iDEFFmxUQKbjFy6x7" target="_blank" class="link-lokasi">
+                    <article class="contact-card">
+                        <a href="https://maps.app.goo.gl/iDEFFmxUQKbjFy6x7" target="_blank" rel="noopener noreferrer"
+                            class="link-lokasi">
                             <h3 class="card-heading" style="margin-bottom: 12px;">
-                                <i class="fas fa-map-marker-alt text-green"></i> Wellington Square, Oxford OX1 2JD,
-                                Inggris Raya
+                                <i class="fas fa-map-marker-alt text-green" aria-hidden="true"></i> Wellington Square,
+                                Oxford OX1 2JD, Inggris Raya
                             </h3>
                         </a>
-
                         <div class="map-illustration">
-                            <img src="images/foto-lokasi.jpg" alt="Foto Lokasi"
-                                style="border-radius: 8px; width: 100%; height: 260px; object-fit: cover;">
+                            <img src="images/foto-lokasi.jpg" alt="Foto Lokasi Kampus"
+                                style="width: 100%; height: 260px; object-fit: cover;">
                         </div>
-                    </div>
-                </div>
-        </section>
+                    </article>
 
-        <section id="faq" class="cta-section" style="background-color: var(--bg-white);">
-            <div class="container cta-content">
-                <h2 style="margin-bottom: 12px;">Ada Pertanyaan Lain?</h2>
-                <p style="color: var(--text-gray); margin-bottom: 30px;">Jika Anda membutuhkan bantuan segera, periksa
-                    FAQ kami atau hubungi kami melalui saluran di atas.</p>
-                <div class="cta-buttons">
-                    <a href="03-index.html" class="btn btn-outline-blue">Kembali ke Beranda</a>
                 </div>
             </div>
-
         </section>
 
-        <section id="faq" class="faq-section" style="background-color: var(--bg-white); padding: 0 px 0;">
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section" style="background-color: var(--bg-white);" aria-labelledby="faq-heading">
             <div class="container">
-                <h2 class="section-title">FAQ Pendaftaran Kegiatan Mahasiswa</h2>
+                <h2 class="section-title" id="faq-heading">FAQ Pendaftaran Kegiatan Mahasiswa</h2>
 
                 <div class="faq-container">
                     <details class="faq-item">
-                        <summary class="faq-question">1. Bagaimana cara mengetahui detail jadwal dan lokasi kegiatan?
+                        <summary class="faq-question">
+                            <span class="faq-number">01</span>
+                            <span class="faq-title">Bagaimana cara mengetahui detail jadwal dan lokasi kegiatan?</span>
                         </summary>
                         <div class="faq-answer">
-                            <p>Anda dapat menekan tombol "Lihat Kegiatan" di halaman utama. Di sana akan tertera daftar
-                                lengkap beserta tanggal, waktu, lokasi (offline), atau link pertemuan (online) untuk
-                                setiap kegiatan.</p>
+                            <p>Anda dapat menekan tombol "Lihat Kegiatan" di halaman utama atau menu "Kegiatan". Di sana
+                                akan tertera daftar lengkap beserta tanggal, waktu, lokasi (offline), atau link
+                                pertemuan (online) untuk setiap kegiatan.</p>
                         </div>
                     </details>
 
                     <details class="faq-item">
-                        <summary class="faq-question">2. Apakah saya boleh mendaftar lebih dari satu kegiatan sekaligus?
+                        <summary class="faq-question">
+                            <span class="faq-number">02</span>
+                            <span class="faq-title">Apakah saya boleh mendaftar lebih dari satu kegiatan sekaligus?</span>
                         </summary>
                         <div class="faq-answer">
                             <p>Boleh. Mahasiswa dibebaskan untuk mengikuti berbagai kegiatan seperti seminar, workshop,
@@ -163,8 +191,10 @@
                     </details>
 
                     <details class="faq-item">
-                        <summary class="faq-question">3. Apa yang harus saya lakukan setelah menekan tombol "Daftar
-                            Sekarang"?</summary>
+                        <summary class="faq-question">
+                            <span class="faq-number">03</span>
+                            <span class="faq-title">Apa yang harus saya lakukan setelah menekan tombol "Daftar Sekarang"?</span>
+                        </summary>
                         <div class="faq-answer">
                             <p>Anda akan diarahkan ke formulir pendaftaran. Pastikan mengisi data diri dengan benar
                                 (Nama, NIM, dan Email). Setelah berhasil, Anda akan menerima konfirmasi pendaftaran atau
@@ -173,8 +203,10 @@
                     </details>
 
                     <details class="faq-item">
-                        <summary class="faq-question">4. Apakah kegiatan yang terdaftar di platform ini mendapatkan
-                            sertifikat?</summary>
+                        <summary class="faq-question">
+                            <span class="faq-number">04</span>
+                            <span class="faq-title">Apakah kegiatan yang terdaftar di platform ini mendapatkan sertifikat?</span>
+                        </summary>
                         <div class="faq-answer">
                             <p>Mayoritas kegiatan seperti seminar dan workshop menyediakan e-sertifikat. Keterangan
                                 mengenai sertifikat bisa Anda lihat pada detail masing-masing kegiatan sebelum
@@ -183,49 +215,52 @@
                     </details>
 
                     <details class="faq-item">
-                        <summary class="faq-question">5. Bagaimana jika saya ingin membatalkan pendaftaran kegiatan?
+                        <summary class="faq-question">
+                            <span class="faq-number">05</span>
+                            <span class="faq-title">Bagaimana jika saya ingin membatalkan pendaftaran kegiatan?</span>
                         </summary>
                         <div class="faq-answer">
                             <p>Untuk pembatalan, Anda dapat menghubungi kontak panitia yang tertera pada detail kegiatan
-                                atau melalui menu "Tentang/Kontak" di navbar untuk bantuan lebih lanjut.</p>
+                                atau melalui form kontak ini untuk bantuan lebih lanjut.</p>
                         </div>
                     </details>
                 </div>
             </div>
 
-            <div class="scenery-ornament">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
-                    style="height: 150px;">
-                    <path fill="#34d399" opacity="0.5"
-                        d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
-                    <path fill="#10b981" opacity="0.8"
-                        d="M0,200 C200,100 500,250 800,120 C1100,-10 1300,150 1440,160 L1440,200 L0,200 Z"></path>
-                    <path fill="#2d3748"
-                        d="M0,200 C400,150 800,250 1200,160 C1350,130 1400,180 1440,190 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
         </section>
+
+        <!-- Scenery Ornament at the bottom of the page -->
+        <div class="scenery-ornament" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
+                style="height: 150px;">
+                <path fill="#34d399" opacity="0.5"
+                    d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
+                <path fill="#10b981" opacity="0.8"
+                    d="M0,200 C200,100 500,250 800,120 C1100,-10 1300,150 1440,160 L1440,200 L0,200 Z"></path>
+                <path fill="#2d3748"
+                    d="M0,200 C400,150 800,250 1200,160 C1350,130 1400,180 1440,190 L1440,200 L0,200 Z"></path>
+            </svg>
+        </div>
     </main>
 
-    <footer class="footer">
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email: malaka.education@kampus.ac.id</span>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>malaka.education@kampus.ac.id</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram : @malaka.edu</span>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@malaka.edu</span>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Sistem Kegiatan Mahasiswa
-            </div>
+            <p class="copyright">&copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.</p>
         </div>
     </footer>
 
