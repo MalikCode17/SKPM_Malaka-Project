@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistem Pendaftaran Kegiatan Mahasiswa - Tentang Kami</title>
+    <meta name="description" content="Tentang Portal MALAKA - Visi, Misi, dan Keunggulan Platform">
+    <title>Tentang Kami - Sistem Pendaftaran Kegiatan Mahasiswa MALAKA</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,134 +16,153 @@
 
 <body>
 
-    <header class="navbar">
+    <!-- ===== NAVIGASI ===== -->
+    <header class="navbar" role="banner">
         <div class="container navbar-inner">
-            <a href="03-index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
+            <a href="03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
             </a>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle">
-            <label for="navToggle" class="hamburger">
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-menu">
-                <li><a href="03-index.html">Beranda</a></li>
-                <li><a href="04-kegiatan.html">Kegiatan</a></li>
-                <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="06-tentang.html" class="active">Tentang</a></li>
-                <li><a href="07-kontak.html">Kontak</a></li>
-                <li><a href="01-login.html" class="btn btn-orange nav-login-btn">Logout</a></li>
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <ul>
+                    <li><a href="03-index.html">Beranda</a></li>
+                    <li><a href="04-kegiatan.html">Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="06-tentang.html" class="active" aria-current="page">Tentang</a></li>
+                    <li><a href="07-kontak.html">Kontak</a></li>
+                    <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="hero hero-tentang">
+    <!-- ===== KONTEN UTAMA ===== -->
+    <main id="main-content">
+
+        <!-- Hero Section -->
+        <section class="hero hero-tentang" aria-labelledby="hero-tentang-heading">
             <div class="container hero-inner">
                 <div class="hero-content">
-                    <h1>Tentang Platform Kami: Membangun Ekosistem Mahasiswa Unggul</h1>
-                    <p>Halaman ini didedikasikan untuk menjelaskan visi kami: platform digital yang dirancang untuk
-                        menjadi jembatan antara mahasiswa dan peluang pengembangan diri yang tak terbatas di kampus.
-                        Kami percaya pada kekuatan konektivitas untuk mendorong kolaborasi, inovasi, dan pertumbuhan
-                        kolektif.</p>
+                    <h1 id="hero-tentang-heading">
+                        Tentang Platform Kami: Membangun Ekosistem Mahasiswa Unggul
+                    </h1>
+                    <p>
+                        Kami hadir sebagai platform digital yang menjembatani mahasiswa dengan berbagai peluang pengembangan diri guna 
+                        menciptakan kolaborasi, inovasi, dan pertumbuhan kolektif di kampus.
+                    </p>
                     <div class="hero-buttons">
-                        <a href="#visi" class="btn btn-blue">Pelajari Visi Kami</a>
-                        <a href="/lihat_tim_kami/00-lihat-tim-kami.html#tim" class="btn btn-orange">Lihat Tim Kami</a>
+                        <a href="#visi" class="btn btn-blue" id="btn-pelajari-visi">
+                            <i class="fas fa-eye" aria-hidden="true"></i> Pelajari Visi Kami
+                        </a>
+                        <a href="lihat_tim_kami/00-lihat-tim-kami.html#tim" class="btn btn-orange" id="btn-lihat-tim">
+                            <i class="fas fa-users" aria-hidden="true"></i> Lihat Tim Kami
+                        </a>
                     </div>
                 </div>
-
-                <div class="hero-wave"
-                    style="position: absolute; bottom: -2px; left: 0; width: 100%; z-index: 1; line-height: 0;">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160"
-                        style="display: block; width: 100%; height: auto;">
-                        <path fill="#ffffff" fill-opacity="1"
-                            d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z">
-                        </path>
-                    </svg>
-                </div>
+            </div>
+            <div class="hero-wave" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
+                    <path fill="#ffffff" fill-opacity="1"
+                        d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z">
+                    </path>
+                </svg>
+            </div>
         </section>
 
-        <section id="visi" class="categories">
+        <!-- Visi Misi -->
+        <section id="visi" class="categories" aria-labelledby="visi-heading">
             <div class="container">
-                <h2 class="section-title">Visi dan Misi Kami</h2>
+                <h2 class="section-title" id="visi-heading">Visi dan Misi Kami</h2>
                 <div class="categories-grid">
-                    <div class="category-card">
-                        <div class="icon-circle icon-1"><i class="fas fa-user-graduate"></i></div>
+                    <article class="category-card">
+                        <div class="icon-circle icon-1" aria-hidden="true">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
                         <h3>Konektivitas Mahasiswa</h3>
                         <p class="card-text">Memastikan semua peluang tersedia secara setara.</p>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon-circle icon-2"><i class="fas fa-trophy"></i></div>
+                    </article>
+                    <article class="category-card">
+                        <div class="icon-circle icon-2" aria-hidden="true">
+                            <i class="fas fa-trophy"></i>
+                        </div>
                         <h3>Pengembangan Potensi</h3>
                         <p class="card-text">Mendukung pencapaian akademik dan non-akademik.</p>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon-circle icon-3"><i class="fas fa-chalkboard-teacher"></i></div>
+                    </article>
+                    <article class="category-card">
+                        <div class="icon-circle icon-3" aria-hidden="true">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
                         <h3>Komunitas yang Solid</h3>
                         <p class="card-text">Memperkuat ikatan antar mahasiswa.</p>
-                    </div>
-                    <div class="category-card">
-                        <div class="icon-circle icon-4"><i class="fas fa-laptop-code"></i></div>
+                    </article>
+                    <article class="category-card">
+                        <div class="icon-circle icon-4" aria-hidden="true">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
                         <h3>Akses Inovatif</h3>
                         <p class="card-text">Menyediakan alat digital yang canggih.</p>
-                    </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="activities bg-light-blue-section">
+        <!-- Keunggulan Platform -->
+        <section class="activities bg-light-blue-section" aria-labelledby="keunggulan-heading">
             <div class="container">
-                <h2 class="section-title">Keunggulan Platform Kami</h2>
+                <h2 class="section-title" id="keunggulan-heading">Keunggulan Platform Kami</h2>
                 <div class="activities-grid">
 
-                    <div class="feature-card">
-                        <div class="icon-circle icon-1"><i class="fas fa-rocket"></i></div>
-                        <h3>Akses Mudah & Cepat</h3>
-                        <p>Cari dan daftar kegiatan di mana saja.</p>
-                        <a href="/detail_keunggulan_platform/01-aksesmudah&cepat.html" class="btn btn-blue w-100">Detail
-                            Fitur</a>
-                    </div>
+                    <article class="feature-card">
+                        <div class="icon-circle icon-1" aria-hidden="true"><i class="fas fa-rocket"></i></div>
+                        <h3>Akses Mudah &amp; Cepat</h3>
+                        <p>Cari dan daftar kegiatan di mana saja dengan platform yang responsif.</p>
+                        <a href="detail_keunggulan_platform/01-aksesmudah&cepat.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                    </article>
 
-                    <div class="feature-card">
-                        <div class="icon-circle icon-2"><i class="fas fa-server"></i></div>
+                    <article class="feature-card">
+                        <div class="icon-circle icon-2" aria-hidden="true"><i class="fas fa-server"></i></div>
                         <h3>Informasi Terpusat</h3>
-                        <p>Satu tempat untuk semua kegiatan kampus.</p>
-                        <a href="/detail_keunggulan_platform/02-informasi-terpusat.html"
-                            class="btn btn-blue w-100">Detail Fitur</a>
-                    </div>
+                        <p>Satu tempat terintegrasi untuk semua kegiatan kampus Anda.</p>
+                        <a href="detail_keunggulan_platform/02-informasi-terpusat.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                    </article>
 
-                    <div class="feature-card">
-                        <div class="icon-circle icon-3"><i class="fas fa-chart-line"></i></div>
+                    <article class="feature-card">
+                        <div class="icon-circle icon-3" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
                         <h3>Pelacakan Kemajuan</h3>
-                        <p>Pantau sertifikat dan partisipasi Anda.</p>
-                        <a href="/detail_keunggulan_platform/03-pelacakan-kemajuan.html"
-                            class="btn btn-blue w-100">Detail Fitur</a>
-                    </div>
+                        <p>Pantau sertifikat dan partisipasi Anda secara real-time.</p>
+                        <a href="detail_keunggulan_platform/03-pelacakan-kemajuan.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                    </article>
 
-                    <div class="feature-card">
-                        <div class="icon-circle icon-4"><i class="fas fa-shield-alt"></i></div>
+                    <article class="feature-card">
+                        <div class="icon-circle icon-4" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
                         <h3>Keamanan Data</h3>
-                        <p>Melindungi privasi dan data pribadi.</p>
-                        <a href="/detail_keunggulan_platform/04-keamanan-data.html" class="btn btn-blue w-100">Detail
-                            Fitur</a>
-                    </div>
+                        <p>Melindungi privasi dan data pribadi dengan standar tinggi.</p>
+                        <a href="detail_keunggulan_platform/04-keamanan-data.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <section class="cta-section" style="background-color: var(--bg-white);">
+        <!-- CTA -->
+        <section class="cta-section" style="background-color: var(--bg-white);" aria-labelledby="cta-tentang-heading">
             <div class="container cta-content">
-                <h2>Mari Kita Bangun Ekosistem ini Bersama</h2>
+                <h2 id="cta-tentang-heading">Mari Kita Bangun Ekosistem ini Bersama</h2>
                 <div class="cta-buttons">
-                    <a href="/07-kontak.html#formulir" class="btn btn-blue">Ajukan Masukan</a>
+                    <a href="07-kontak.html#formulir" class="btn btn-blue" id="btn-ajukan-masukan">
+                        <i class="fas fa-comment-dots" aria-hidden="true"></i> Ajukan Masukan
+                    </a>
                 </div>
             </div>
-
-            <div class="scenery-ornament">
+            <div class="scenery-ornament" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
                     style="height: 150px;">
                     <path fill="#34d399" opacity="0.5"
@@ -154,27 +174,27 @@
                 </svg>
             </div>
         </section>
+
     </main>
 
-    <footer class="footer">
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email: malaka.education@kampus.ac.id</span>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>malaka.education@kampus.ac.id</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram : @malaka.edu</span>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@malaka.edu</span>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Sistem Kegiatan Mahasiswa
-            </div>
+            <p class="copyright">&copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.</p>
         </div>
     </footer>
 
