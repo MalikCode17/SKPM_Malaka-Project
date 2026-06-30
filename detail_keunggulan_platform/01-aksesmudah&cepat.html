@@ -4,72 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detail Fitur Keunggulan - Akses Mudah & Cepat di Portal MALAKA.">
     <title>Detail Fitur - Akses Mudah & Cepat</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles_keunggulan_platform.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles_keunggulan_platform.css">
 </head>
 
 <body class="bg-light-blue-body">
 
-    <header class="navbar">
+    <!-- ===== NAVIGASI ===== -->
+    <header class="navbar" role="banner">
         <div class="container navbar-inner">
-            <a href="/03-index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
+            <a href="../03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
             </a>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle">
-            <label for="navToggle" class="hamburger">
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-menu">
-                <li><a href="/03-index.html">Beranda</a></li>
-                <li><a href="/04-kegiatan.html">Kegiatan</a></li>
-                <li><a href="/05-pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="/06-tentang.html" class="active">Tentang</a></li>
-                <li><a href="/07-kontak.html">Kontak</a></li>
-                <li><a href="/01-login.html" class="btn btn-orange nav-login-btn">Logout</a></li>
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <ul>
+                    <li><a href="../03-index.html">Beranda</a></li>
+                    <li><a href="../04-kegiatan.html">Kegiatan</a></li>
+                    <li><a href="../05-pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="../06-tentang.html" class="active" aria-current="page">Tentang</a></li>
+                    <li><a href="../07-kontak.html">Kontak</a></li>
+                    <li><a href="../01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <section class="form-header-title" style="padding-top: 100px; padding-bottom: 40px;">
-            <h1 style="font-size: 2.5rem; color: var(--primary-blue);">Akses Mudah & Cepat</h1>
-            <p style="font-weight: 700; color: var(--accent-orange);">Keunggulan Platform Kami</p>
+    <!-- ===== KONTEN UTAMA ===== -->
+    <main id="main-content">
+        <section class="detail-page-header" aria-labelledby="detail-heading">
+            <div class="container">
+                <h1 id="detail-heading">Akses Mudah &amp; Cepat</h1>
+                <p>Keunggulan Platform Kami</p>
+            </div>
         </section>
 
-        <section style="padding-bottom: 0;">
+        <section style="padding-bottom: 0;" aria-label="Penjelasan Fitur">
             <div class="container" style="padding-bottom: 80px;">
                 <div class="detail-grid">
 
-                    <div class="detail-left">
-                        <img src="/images/images_platform/01-Akses-Mudah-dan-Cepat.jpg"
-                            alt="Ilustrasi Akses Cepat" class="detail-hero-img">
+                    <!-- Bagian Kiri: Deskripsi -->
+                    <article class="detail-left">
+                        <img src="../images/images_platform/01-Akses-Mudah-dan-Cepat.jpg" alt="Ilustrasi Akses Cepat"
+                            class="w-100" style="border-radius: var(--radius-lg); margin-bottom: 32px; object-fit: cover; max-height: 400px;">
 
-                        <h2 class="detail-heading">Penjelasan Fitur</h2>
-                        <p class="detail-paragraph">
+                        <h2 style="font-size: 1.5rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 800;">Penjelasan Fitur</h2>
+                        <p style="color: var(--text-gray); margin-bottom: 16px; line-height: 1.7;">
                             Kami memahami bahwa waktu mahasiswa sangatlah berharga. Oleh karena itu, Sistem Pendaftaran
                             Kegiatan Mahasiswa ini dibangun dengan infrastruktur teknologi modern yang mengutamakan
                             kecepatan dan kemudahan akses di setiap lapisannya.
                         </p>
-                        <p class="detail-paragraph">
+                        <p style="color: var(--text-gray); margin-bottom: 24px; line-height: 1.7;">
                             Anda tidak perlu lagi membuang waktu datang ke mading kampus atau mengantre di sekretariat
                             himpunan hanya untuk mencari tahu dan mendaftar kegiatan. Semua informasi dari berbagai
                             fakultas dan UKM kini terintegrasi penuh dan dapat diakses langsung dari genggaman Anda,
                             kapan saja dan di mana saja.
                         </p>
 
-                        <h3 class="detail-heading" style="margin-top: 32px; font-size: 1.3rem;">Nilai Tambah untuk
-                            Pengguna:</h3>
-                        <ul class="detail-list">
+                        <h3 style="font-size: 1.3rem; color: var(--text-dark); margin-bottom: 16px; font-weight: 800;">Nilai Tambah untuk Pengguna:</h3>
+                        <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-gray); line-height: 1.7;">
                             <li><strong>Responsif di Semua Perangkat:</strong> Tampilan antarmuka yang akan menyesuaikan
                                 diri secara otomatis dengan sempurna, baik Anda membukanya di laptop, tablet, maupun
                                 layar smartphone yang sempit.</li>
@@ -80,43 +88,43 @@
                             <li><strong>Proses 1-Klik:</strong> Alur pendaftaran yang disederhanakan tanpa birokrasi
                                 digital yang panjang dan rumit.</li>
                         </ul>
-                    </div>
+                    </article>
 
-                    <div class="detail-right">
+                    <!-- Bagian Kanan: Info & Aksi -->
+                    <aside class="detail-right">
                         <div class="info-kegiatan-box sticky-info-card">
-                            <h4
-                                style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px;">
-                                Ringkasan Spesifikasi</h4>
+                            <h4 style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px;">
+                                Ringkasan Spesifikasi
+                            </h4>
 
                             <table class="info-table" style="margin-bottom: 24px;">
                                 <tr>
-                                    <td style="width: 110px;"><i class="fas fa-rocket text-blue"
-                                            style="width: 24px;"></i> Ikon Fitur</td>
-                                    <td style="font-weight: 600;">Rocket (Kecepatan)</td>
+                                    <td style="width: 110px;"><i class="fas fa-rocket text-blue" style="width: 24px;" aria-hidden="true"></i> Ikon Fitur</td>
+                                    <td style="font-weight: 700; color: var(--text-dark);">Rocket (Kecepatan)</td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fas fa-check-circle text-blue" style="width: 24px;"></i> Status</td>
-                                    <td style="font-weight: 600; color: #10b981;">Aktif & Optimal</td>
+                                    <td><i class="fas fa-check-circle text-blue" style="width: 24px;" aria-hidden="true"></i> Status</td>
+                                    <td style="font-weight: 700; color: #10b981;">Aktif &amp; Optimal</td>
                                 </tr>
                                 <tr>
-                                    <td><i class="fas fa-mobile-alt text-blue" style="width: 24px;"></i> Dukungan</td>
-                                    <td style="font-weight: 600;">Web & Mobile iOS/Android</td>
+                                    <td><i class="fas fa-mobile-alt text-blue" style="width: 24px;" aria-hidden="true"></i> Dukungan</td>
+                                    <td style="font-weight: 700; color: var(--text-dark);">Web &amp; Mobile iOS/Android</td>
                                 </tr>
                             </table>
 
-                            <div class="kuota-bar"
-                                style="background-color: #3b82f6; text-align: center; margin-bottom: 24px;">
+                            <div class="kuota-bar" style="background-color: #3b82f6; text-align: center; margin-bottom: 24px; color: white; padding: 10px; border-radius: var(--radius-sm); font-weight: 700;">
                                 Pilar Utama Sistem
                             </div>
 
-                            <a href="/06-tentang.html" class="btn btn-outline-blue w-100"
+                            <a href="../06-tentang.html" class="btn btn-outline-blue w-100"
                                 style="display: block; text-align: center;">Kembali ke Tentang Kami</a>
                         </div>
-                    </div>
+                    </aside>
+
                 </div>
             </div>
 
-            <div class="scenery-ornament">
+            <div class="scenery-ornament" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none">
                     <path fill="#34d399" opacity="0.5"
                         d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
@@ -129,25 +137,24 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>Email: malaka.education@kampus.ac.id</span>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>malaka.education@kampus.ac.id</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram : @malaka.edu</span>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@malaka.edu</span>
                 </div>
             </div>
-            <div class="copyright">
-                &copy; 2026 Sistem Kegiatan Mahasiswa
-            </div>
+            <p class="copyright">&copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.</p>
         </div>
     </footer>
 
