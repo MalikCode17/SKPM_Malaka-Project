@@ -4,44 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulir Pendaftaran Kegiatan Seminar dan Workshop di MALAKA.">
     <title>Formulir Pendaftaran - Seminar AI</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles_pendaftaran.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/styles_pendaftaran.css">
 </head>
 
 <body style="background-color: var(--bg-light-blue);">
 
-    <header class="navbar">
+    <header class="navbar" role="banner">
         <div class="container navbar-inner">
-            <a href="/03-index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
+            <a href="../03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
             </a>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle">
-            <label for="navToggle" class="hamburger">
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-menu">
-                <li><a href="/03-index.html">Beranda</a></li>
-                <li><a href="/04-kegiatan.html">Kegiatan</a></li>
-                <li><a href="01-pendaftaran-seminar.html" class="active">Pendaftaran</a></li>
-                <li><a href="/06-tentang.html">Tentang</a></li>
-                <li><a href="/07-kontak.html">Kontak</a></li>
-                <li><a href="/01-login.html" class="btn btn-orange nav-login-btn">Login</a></li>
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <ul>
+                    <li><a href="../03-index.html">Beranda</a></li>
+                    <li><a href="../04-kegiatan.html">Kegiatan</a></li>
+                    <li><a href="01-pendaftaran-seminar.html" class="active" aria-current="page">Pendaftaran</a></li>
+                    <li><a href="../06-tentang.html">Tentang</a></li>
+                    <li><a href="../07-kontak.html">Kontak</a></li>
+                    <li><a href="../01-login.html" class="btn btn-orange nav-login-btn">Login</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <div class="container">
+    <main id="main-content">
+        <div class="container" style="padding-top: 40px;">
             <div class="form-header-title">
                 <h1>Formulir Pendaftaran Kegiatan Seminar & Workshop</h1>
                 <p>Silakan isi data diri Anda untuk mendaftar kegiatan.</p>
@@ -50,20 +54,19 @@
             <div class="registration-card">
 
                 <div class="registration-illustration">
-                    <img src="/images/images_formulir_daftar/Foto-Formulir-Pendaftaran.jpg"
-                        alt="Ilustrasi Pendaftaran">
+                    <img src="../images/images_formulir_daftar/Foto-Formulir-Pendaftaran.jpg" alt="Ilustrasi Pendaftaran">
                 </div>
 
-                <form action="/04-kegiatan.html" method="GET">
+                <form action="../04-kegiatan.html" method="GET">
 
                     <div class="form-group" style="margin-bottom: 16px;">
                         <label
                             style="display: block; font-weight: 800; margin-bottom: 8px; color: var(--text-dark);">Nama
                             Lengkap</label>
                         <div class="custom-input-group">
-                            <span class="icon-side"><i class="fas fa-user"></i></span>
+                            <span class="icon-side"><i class="fas fa-user" aria-hidden="true"></i></span>
                             <input type="text" placeholder="Masukkan Nama Lengkap" required>
-                            <span class="icon-side right"><i class="fas fa-user"></i></span>
+                            <span class="icon-side right"><i class="fas fa-user" aria-hidden="true"></i></span>
                         </div>
                     </div>
 
@@ -71,9 +74,9 @@
                         <label
                             style="display: block; font-weight: 800; margin-bottom: 8px; color: var(--text-dark);">NIM</label>
                         <div class="custom-input-group">
-                            <span class="icon-side"><i class="fas fa-envelope-open-text"></i></span>
+                            <span class="icon-side"><i class="fas fa-envelope-open-text" aria-hidden="true"></i></span>
                             <input type="text" placeholder="Masukkan NIM" required>
-                            <span class="icon-side right"><i class="fas fa-id-card"></i></span>
+                            <span class="icon-side right"><i class="fas fa-id-card" aria-hidden="true"></i></span>
                         </div>
                     </div>
 
@@ -81,9 +84,9 @@
                         <label
                             style="display: block; font-weight: 800; margin-bottom: 8px; color: var(--text-dark);">Email</label>
                         <div class="custom-input-group">
-                            <span class="icon-side"><i class="fas fa-envelope"></i></span>
+                            <span class="icon-side"><i class="fas fa-envelope" aria-hidden="true"></i></span>
                             <input type="email" placeholder="Masukkan Email" required>
-                            <span class="icon-side right"><i class="fas fa-envelope"></i></span>
+                            <span class="icon-side right"><i class="fas fa-envelope" aria-hidden="true"></i></span>
                         </div>
                     </div>
 
@@ -111,7 +114,7 @@
                                 <td>Aula Universitas</td>
                             </tr>
                         </table>
-                        <i class="fas fa-map-marked-alt info-icon-bg"></i>
+                        <i class="fas fa-map-marked-alt info-icon-bg" aria-hidden="true"></i>
                     </div>
 
                     <div class="info-kegiatan-box" style="margin-bottom: 32px;">
@@ -122,17 +125,17 @@
                     </div>
 
                     <div class="action-buttons-row">
-                        <a href="/04-kegiatan.html" class="btn btn-blue"><i class="fas fa-times"
-                                style="margin-right: 8px;"></i> Batal</a>
+                        <a href="../04-kegiatan.html" class="btn btn-blue"><i class="fas fa-times"
+                                style="margin-right: 8px;" aria-hidden="true"></i> Batal</a>
                         <button type="submit" class="btn btn-orange">Daftar Sekarang</button>
                     </div>
                 </form>
             </div>
         </div>
 
-        <div class="scenery-ornament" style="line-height: 0; margin-bottom: -2px; position: relative; z-index: 1;">
+        <div class="scenery-ornament" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
-                style="display: block; width: 100%; height: auto;">
+                style="height: 150px;">
                 <path fill="#34d399" opacity="0.5"
                     d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
                 <path fill="#10b981" opacity="0.8"
@@ -143,24 +146,24 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <span>Email: malaka.education@kampus.ac.id</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
                     <span>Instagram : @malaka.edu</span>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2026 Sistem Kegiatan Mahasiswa
+                &copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.
             </div>
         </div>
     </footer>
