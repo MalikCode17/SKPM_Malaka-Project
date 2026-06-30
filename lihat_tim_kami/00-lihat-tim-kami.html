@@ -4,59 +4,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Informasi tentang tim pengembang platform Sistem Pendaftaran Kegiatan Mahasiswa MALAKA.">
     <title>Sistem Pendaftaran Kegiatan Mahasiswa - Tentang Kami</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/styles_tim_kami.css">
+    <link rel="stylesheet" href="../css/styles_tim_kami.css">
 </head>
 
 <body>
 
-    <header class="navbar">
+    <header class="navbar" role="banner">
         <div class="container navbar-inner">
-            <a href="03-index.html" class="logo">
-                <i class="fas fa-graduation-cap"></i>
+            <a href="../03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
                 <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
             </a>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle">
-            <label for="navToggle" class="hamburger">
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
                 <span></span>
                 <span></span>
                 <span></span>
             </label>
 
-            <nav class="nav-menu">
-                <li><a href="/03-index.html">Beranda</a></li>
-                <li><a href="/04-kegiatan.html">Kegiatan</a></li>
-                <li><a href="/05-pendaftaran.html">Pendaftaran</a></li>
-                <li><a href="/06-tentang.html" class="active">Tentang</a></li>
-                <li><a href="/07-kontak.html">Kontak</a></li>
-                <li><a href="/01-login.html" class="btn btn-orange nav-login-btn">Logout</a></li>
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <ul>
+                    <li><a href="../03-index.html">Beranda</a></li>
+                    <li><a href="../04-kegiatan.html">Kegiatan</a></li>
+                    <li><a href="../05-pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="../06-tentang.html" class="active" aria-current="page">Tentang</a></li>
+                    <li><a href="../07-kontak.html">Kontak</a></li>
+                    <li><a href="../01-login.html" class="btn btn-orange nav-login-btn">Logout</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="hero hero-tentang">
             <div class="container hero-inner">
                 <div class="hero-content">
                     <h1>Tentang Platform Kami: Membangun Ekosistem Mahasiswa Unggul</h1>
-                    <p>Halaman ini didedikasikan untuk menjelaskan visi kami: platform digital yang dirancang untuk
-                        menjadi jembatan antara mahasiswa dan peluang pengembangan diri yang tak terbatas di kampus.
-                        Kami percaya pada kekuatan konektivitas untuk mendorong kolaborasi, inovasi, dan pertumbuhan
-                        kolektif.</p>
+                    <p>Kami hadir sebagai platform digital yang menjembatani mahasiswa dengan 
+                        berbagai peluang pengembangan diri guna menciptakan kolaborasi, inovasi, 
+                        dan pertumbuhan kolektif di kampus.</p>
                     <div class="hero-buttons">
-                        <a href="/06-tentang.html#visi" class="btn btn-blue">Pelajari Visi Kami</a>
+                        <a href="../06-tentang.html#visi" class="btn btn-blue">Pelajari Visi Kami</a>
                         <a href="#tim" class="btn btn-orange">Lihat Tim Kami</a>
                     </div>
                 </div>
             </div>
 
-            <div class="hero-wave">
+            <div class="hero-wave" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
                     <path fill="#ffffff" fill-opacity="1"
                         d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z">
@@ -67,11 +70,11 @@
 
         <section id="tim" class="team-section">
             <div class="container">
-                <h2 class="section-title">Tim Pengembang Kami</h2>
+                <h2 class="section-title">Tim Pengembang</h2>
 
                 <div class="team-group-card">
                     <div class="team-group-img">
-                        <img src="/images/images_tim/foto_bertiga.jpeg" alt="Foto Tim Pengembang">
+                        <img src="../images/images_tim/foto_bertiga.jpeg" alt="Foto Tim Pengembang">
                     </div>
                     <div class="team-group-text">
                         <h3
@@ -90,24 +93,25 @@
                 <div class="team-members-grid">
 
                     <div class="member-card">
-                        <img src="/images/images_tim/Malikul_Sholeh_Rangkuti.jpeg" alt="Anggota 1" class="member-img">
-                        <h4 class="member-name">Malikul Sholeh Rangkuti <br> Anggota</h4></br>
+                        <img src="../images/images_tim/Malikul_Sholeh_Rangkuti.jpeg" alt="Anggota 1" class="member-img">
+                        <h4 class="member-name">Malikul Sholeh Rangkuti <br> Anggota</h4><br>
                         <span class="member-role">Front-End Developer</span>
                         <p class="member-desc">Bertanggung jawab menerjemahkan desain ke dalam kode HTML dan CSS
                             interaktif yang responsif di berbagai perangkat.</p>
                     </div>
 
                     <div class="member-card">
-                        <img src="/images/images_tim/Edy_Kevin_Feryanto_Purba.jpeg" alt="Anggota 2" class="member-img">
-                        <h4 class="member-name">Edy Kevin Feryanto Purba <br> Ketua</h4></br>
+                        <img src="../images/images_tim/Edy_Kevin_Feryanto_Purba.jpeg" alt="Anggota 2"
+                            class="member-img">
+                        <h4 class="member-name">Edy Kevin Feryanto Purba <br> Ketua</h4><br>
                         <span class="member-role">UI/UX Designer</span>
                         <p class="member-desc">Fokus pada perancangan antarmuka yang ramah pengguna, riset pengalaman,
                             dan pembuatan purwarupa yang estetik.</p>
                     </div>
 
                     <div class="member-card">
-                        <img src="/images/images_tim/Ricky_Yudianto.jpeg" alt="Anggota 3" class="member-img">
-                        <h4 class="member-name">Ricky Yudianto <br> Anggota</h4></br>
+                        <img src="../images/images_tim/Ricky_Yudianto.jpeg" alt="Anggota 3" class="member-img">
+                        <h4 class="member-name">Ricky Yudianto <br> Anggota</h4><br>
                         <span class="member-role">Front-End Developer</span>
                         <p class="member-desc">Bertanggung jawab menerjemahkan desain ke dalam kode HTML dan CSS
                             interaktif yang responsif di berbagai perangkat.</p>
@@ -118,13 +122,13 @@
 
         <section class="cta-section" style="background-color: var(--bg-white);">
             <div class="container cta-content">
-                <h2>Mari Kita Bangun Ekosistem ini Bersama<br>Saran dan Masukan Anda Sangat Berharga Bagi Kami</h2></br>
+                <h2>Mari Kita Bangun Ekosistem ini Bersama<br>Saran dan Masukan Anda Sangat Berharga Bagi Kami</h2><br>
                 <div class="cta-buttons">
-                    <a href="/07-kontak.html#formulir" class="btn btn-blue">Ajukan Masukan</a>
+                    <a href="../07-kontak.html#formulir" class="btn btn-blue">Ajukan Masukan</a>
                 </div>
             </div>
 
-            <div class="scenery-ornament">
+            <div class="scenery-ornament" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
                     style="height: 150px;">
                     <path fill="#34d399" opacity="0.5"
@@ -138,24 +142,24 @@
         </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-info">
                 <div class="footer-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                     <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <span>Email: malaka.education@kampus.ac.id</span>
                 </div>
                 <div class="footer-item">
-                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
                     <span>Instagram : @malaka.edu</span>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2026 Sistem Kegiatan Mahasiswa
+                &copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.
             </div>
         </div>
     </footer>
