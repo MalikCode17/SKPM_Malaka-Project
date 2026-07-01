@@ -1,895 +1,175 @@
 /* ========================================================
-   1. RESET & CSS VARIABLES 
+   PREMIUM STYLES UNTUK HALAMAN KEGIATAN & KATEGORI (WOW EFFECT)
+   File ini melengkapi styles.css utama.
 ======================================================== */
-:root {
-    --primary-blue: #185a9d;
-    --secondary-blue: #2475c0;
-    --accent-orange: #f89e1b;
-    --accent-red: #ef4444;
-    --orange-hover: #e08b15;
-    --bg-light-blue: #f0f7ff;
-    --bg-white: #ffffff;
-    --text-dark: #2d3748;
-    --text-gray: #64748b;
-    --footer-bg: #2d3748;
-    --border-color: #ffffff;
-}
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Nunito', sans-serif;
-    color: var(--text-dark);
-    background-color: var(--bg-white);
-    line-height: 1.6;
-    padding-top: 70px;
-    overflow-x: hidden;
-}
-
-a {
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-ul {
-    list-style: none;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.section-title {
-    text-align: center;
-    color: var(--primary-blue);
-    font-size: 1.75rem;
-    font-weight: 800;
-    margin-bottom: 40px;
-}
-
-
-/* ========================================================
-   2. HEADER & STICKY NAVBAR 
-======================================================== */
-.navbar {
-    background-color: var(--primary-blue);
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.navbar-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
-}
-
-.logo i {
-    font-size: 1.6rem;
-    color: white;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 24px;
-
-}
-
-.nav-menu li a {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 8px 0;
+/* 1. Header Filter Section (Gradient & Glass) */
+.kegiatan-header-section {
+    background: linear-gradient(135deg, var(--primary-blue), #2475c0) !important;
+    padding: 30px 0;
     position: relative;
+    overflow: visible;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    z-index: 10;
 }
 
-.nav-menu li a:hover,
-.nav-menu li a.active {
-    color: white;
+/* 2. Filter Kategori Dropdown (Premium UI) */
+.filter-box {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    padding: 14px 24px !important;
+    border-radius: 50px !important;
+    transition: all 0.4s ease !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.nav-menu li a.active::after {
+.filter-box:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.filter-box i {
+    color: white !important;
+}
+
+.kategori-dropdown {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 15px 35px rgba(24, 90, 157, 0.15) !important;
+    overflow: hidden;
+    transform-origin: top center;
+    transition: none !important;
+}
+
+.kategori-dropdown li a {
+    padding: 12px 24px !important;
+    color: var(--text-dark) !important;
+    transition: all 0.3s ease !important;
+    font-weight: 600 !important;
+    position: relative;
+    z-index: 1;
+}
+
+.kategori-dropdown li a::before {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
+    top: 0; left: 0; width: 0; height: 100%;
+    background: var(--bg-light-blue);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.kategori-dropdown li a:hover {
+    color: var(--primary-blue) !important;
+    padding-left: 30px !important;
+}
+
+.kategori-dropdown li a:hover::before {
     width: 100%;
-    height: 2px;
-    background-color: white;
-    border-radius: 2px;
 }
 
-/* Styling Tombol */
-.btn {
-    display: inline-block;
-    padding: 10px 28px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-orange {
-    background-color: var(--accent-orange);
-    color: white;
-}
-
-.btn-orange:hover {
-    background-color: var(--orange-hover);
-    color: white;
-}
-
-.btn-blue {
-    background-color: var(--primary-blue);
-    color: white;
-}
-
-.btn-blue:hover {
-    background-color: var(--secondary-blue);
-    color: white;
-}
-
-.nav-login-btn {
-    padding: 8px 24px !important;
-}
-
-/* Checkbox Hack untuk Mobile */
-.nav-toggle {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.hamburger span {
-    width: 24px;
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-
-/* ========================================================
-   3. HERO SECTION
-======================================================== */
-.hero {
-    /* Menambahkan foto1.jpg sebagai background dengan lapisan gelap agar teks putih tetap terbaca */
-    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../images/foto_beranda.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    padding: 120px 0 160px 0;
-}
-
-.hero-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Memposisikan konten di tengah */
-}
-
-.hero-content {
-    max-width: 800px;
-    z-index: 2;
-    text-align: center;
-    /* Membuat teks rata tengah */
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #ffffff;
-    /* Mengubah teks judul menjadi putih */
-    line-height: 1.25;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    color: #e2e8f0;
-    /* Mengubah teks paragraf menjadi putih pudar */
-    font-size: 1.1rem;
-    margin: 0 auto 32px auto;
-    max-width: 90%;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    /* Memastikan tombol rata tengah */
-    gap: 16px;
-}
-
-
-/* ========================================================
-   4. KATEGORI (Informasi Kegiatan) 
-======================================================== */
-.categories {
-    padding: 80px 0 60px 0;
-    background-color: var(--bg-white);
-}
-
-.categories-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
-.category-card {
-    background: linear-gradient(to bottom, #004e92, #87ceeb, #ffffff);
-    border-radius: 16px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s;
-}
-
-.category-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.icon-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px;
-    font-size: 2.2rem;
-}
-
-.icon-1 {
-    background-color: #e0f2fe;
-    color: #0284c7;
-}
-
-.icon-2 {
-    background-color: #fef3c7;
-    color: #d97706;
-}
-
-.icon-3 {
-    background-color: #fee2e2;
-    color: #dc2626;
-}
-
-.icon-4 {
-    background-color: #dcfce7;
-    color: #16a34a;
-}
-
-.category-card h3 {
-    font-size: 1.05rem;
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-
-/* ========================================================
-   5. DAFTAR KEGIATAN MAHASISWA 
-======================================================== */
-.activities {
-    padding: 60px 0 80px 0;
-    background-color: var(--bg-light-blue);
-}
-
+/* 3. Activity Cards (Kartu Kegiatan WOW Effect) */
 .activities-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 30px !important;
 }
 
 .activity-card {
     background: white;
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s;
+    border-radius: 16px !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
+    overflow: hidden;
+    position: relative;
+    padding: 30px 24px 24px 24px !important;
+    z-index: 1;
 }
 
-.activity-card:hover {
-    transform: translateY(-5px);
+
+
+.activity-card:hover::before {
+    height: 100%;
+    opacity: 0.03; /* Memberikan hint warna gradien ke seluruh background card saat hover */
 }
 
+/* 4. Tipografi & Ikon Kartu Kegiatan */
 .activity-card h3 {
-    font-size: 1.1rem;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-    line-height: 1.4;
-    min-height: 50px;
+    font-size: 1.3rem !important;
+    font-weight: 800 !important;
+    color: var(--text-dark) !important;
+    margin-bottom: 16px !important;
+    line-height: 1.4 !important;
+    transition: color 0.3s ease;
 }
 
-.activity-details {
-    margin-bottom: 24px;
-    flex-grow: 1;
+.activity-card:hover h3 {
+    color: var(--primary-blue) !important;
 }
 
 .activity-details li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-    font-size: 0.85rem;
-    color: var(--text-dark);
-    font-weight: 600;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.activity-card:hover .activity-details li {
+    transform: translateX(5px);
 }
 
 .activity-details li i {
-    color: var(--primary-blue);
-    font-size: 1rem;
-    margin-top: 2px;
-    width: 16px;
-    text-align: center;
-}
-
-.activity-card.btn {
-    width: 100%;
-    padding: 10px 0;
-    font-size: 0.9rem;
-}
-
-
-/* ========================================================
-   6. CTA & ORNAMEN PEMANDANGAN BAWAH
-======================================================== */
-.cta-section {
-    padding: 60px 0 0 0;
-    text-align: center;
-    background-color: var(--bg-light-blue);
-    position: relative;
-}
-
-.cta-content {
-    position: relative;
-    z-index: 10;
-    margin-bottom: 40px;
-}
-
-.cta-section h2 {
-    font-size: 1.75rem;
-    color: var(--text-dark);
-    font-weight: 800;
-    margin-bottom: 24px;
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-
-.scenery-ornament {
-    width: 100%;
-    line-height: 0;
-    position: relative;
-    bottom: -1px;
-}
-
-.scenery-ornament svg {
-    width: 100%;
-    height: auto;
-}
-
-/* ========================================================
-   7. FOOTER
-======================================================== */
-.footer {
-    background-color: var(--footer-bg);
-    color: white;
-    padding: 40px 0 20px 0;
-}
-
-.footer-info {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 30px;
-}
-
-.footer-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
-}
-
-.footer-item i {
-    font-size: 1.25rem;
-}
-
-.copyright {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    font-size: 0.85rem;
-    color: #cbd5e1;
-}
-
-
-/* ========================================================
-   FITUR DROPDOWN KATEGORI (HALAMAN KEGIATAN)
-======================================================== */
-/* 1. Mengizinkan dropdown keluar/meluap dari kotak pembungkusnya */
-.search-filter-container {
-    overflow: visible !important;
-}
-
-/* 2. Memperbaiki lengkungan sudut kotak pencarian */
-
-.filter-box {
-    border-radius: 8px;
-    height: 100%;
-}
-
-
-/* 3. Wrapper & Menyembunyikan Checkbox */
-.filter-wrapper {
-    position: relative;
-    margin-right: 48px;
-    margin-left: auto;
-    width: fit-content;
-    /* Memastikan lebar wadah hanya seukuran tombolnya saja */
-}
-
-.kategori-toggle {
-    display: none;
-}
-
-/* 4. Animasi putar ikon panah ke atas saat diklik */
-.arrow-icon {
+    color: var(--accent-orange) !important;
     transition: transform 0.3s ease;
 }
 
-.kategori-toggle:checked~.filter-box.arrow-icon {
-    transform: rotate(180deg);
+.activity-card:hover .activity-details li i {
+    transform: scale(1.2);
 }
 
-/* 5. Tampilan awal kotak menu dropdown (Sembunyi) */
-.kategori-dropdown {
-    display: none;
-    position: absolute;
-    top: 120%;
-    /* Muncul persis di bawah tombol */
-    right: 0;
-    background-color: white;
-    min-width: 280px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    z-index: 1000;
-    padding: 8px 0;
-}
-
-/* 6. Memunculkan menu dropdown ketika Kategori diklik */
-.kategori-toggle:checked~.kategori-dropdown {
-    display: block;
-    animation: fadeInDown 0.2s ease;
-    /* Efek meluncur mulus */
-}
-
-/* 7. Desain teks tautan di dalam dropdown */
-.kategori-dropdown li {
-    list-style: none;
-    /* Memastikan tidak ada titik bulat */
-    display: block;
-}
-
-.kategori-dropdown li a {
-    display: block;
-    padding: 12px 20px;
-    color: var(--text-dark);
-    font-size: 0.95rem;
-    font-weight: 600;
-    transition: all 0.2s;
-}
-
-/* 8. Efek hover saat mouse mengarah ke daftar kategori */
-.kategori-dropdown li a:hover {
-    background-color: var(--bg-light-blue);
-    color: var(--primary-blue);
-    padding-left: 26px;
-    /* Memberikan efek bergeser maju sedikit */
-}
-
-.navbar {
-    /*... properti yang sudah ada... */
-    z-index: 9999;
-    /* Naikkan angkanya menjadi sangat besar */
-}
-
-.kategori-dropdown {
-    /*... properti yang sudah ada... */
-    z-index: 900;
-    /* Turunkan angkanya agar rapi bersembunyi di bawah navbar */
-}
-
-/* Keyframes untuk efek meluncur */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-.bg-orange {
-    background-color: var(--accent-orange) !important;
-}
-
-.bg-yellow {
-    background-color: #f89e1b !important;
-}
-
-.bg-red {
-    background-color: #ef4444 !important;
-}
-
-.bg-green {
-    background-color: #10b981 !important;
-}
-
-/* ========================================================
-   8. MEDIA QUERY RESPONSIF
-======================================================== */
-
-@media (max-width: 1024px) {
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .activities-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-blue);
-        flex-direction: column;
-        padding: 20px 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-toggle:checked~.nav-menu {
-        display: flex;
-    }
-
-    .hero-inner {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-content p {
-        margin: 0 auto 30px auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .footer-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-}
-
-
-/* ========================================================
-   TAMBAHAN HALAMAN KEGIATAN
-======================================================== */
-.bg-light-blue-body {
-    background-color: var(--bg-light-blue);
-}
-
-.kegiatan-header-section {
-    padding: 40px 0;
-}
-
-.kegiatan-header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.page-main-title {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: var(--text-dark);
-}
-
-/* Kotak Pencarian & Filter */
-.search-filter-container {
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
-    margin-left: auto;
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    padding: 12px 16px;
-    background-color: #f8fafc;
-    border-right: 1px solid var(--border-color);
-    margin-left: auto;
-}
-
-.search-box i {
-    color: #94a3b8;
-    margin-right: 10px;
-}
-
-.search-box input {
-    border: none;
-    background: transparent;
-    outline: none;
-    font-family: inherit;
-    font-size: 0.95rem;
-    width: 200px;
-}
-
-.filter-box {
-    display: flex;
-    align-items: center;
-    padding: 12px 20px;
-    background-color: #e0f2fe;
-    color: var(--primary-blue);
-    font-weight: 700;
-    cursor: pointer;
-}
-
-.filter-box span {
-    margin-right: 20px;
-}
-
-/* Layout Utama Halaman Kegiatan */
-.kegiatan-layout {
-    display: flex;
-    gap: 40px;
-    position: relative;
-}
-
-.sidebar-pengaturan {
-    width: 80px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
-}
-
-.settings-icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-gray);
-    font-weight: 600;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.settings-icon i {
-    font-size: 1.5rem;
-}
-
-.settings-icon:hover {
-    color: var(--primary-blue);
-}
-
-.content-grid {
-    flex: 1;
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    /* Memaksa susunan 2 kolom di desktop */
-    gap: 24px !important;
-    /* Memberikan jarak yang rapi antar kotak kegiatan */
-}
-
-/* Kartu Kegiatan Tambahan */
-.relative-card {
-    position: relative;
-    overflow: visible;
-}
-
+/* 5. Badge Status Premium */
 .badge-status {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: var(--accent-orange);
-    color: white;
-    font-size: 0.75rem;
-    font-weight: 800;
-    padding: 4px 12px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
+    position: absolute !important;
+    top: 20px !important;
+    right: -10px !important;
+    padding: 6px 16px !important;
+    border-radius: 20px 0 0 20px !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
+    z-index: 2;
+    transition: right 0.3s ease;
 }
 
-.text-orange {
-    color: var(--accent-orange);
-    font-weight: 700;
+.activity-card:hover .badge-status {
+    right: 0 !important;
 }
 
-.text-red {
-    color: var(--accent-red);
-    font-weight: 700;
-}
-
-/* Aksi Tombol dalam Kartu (Sejajar) */
+/* 6. Animasi Tombol Card */
 .card-actions {
-    display: flex;
-    gap: 12px;
-    margin-top: 10px;
+    margin-top: 24px !important;
+    border-top: 1px dashed var(--border-color) !important;
+    padding-top: 20px !important;
 }
 
-.card-actions.btn {
-    flex: 1;
-    padding: 8px 0;
-    border-radius: 6px;
-    /* Sudut tombol di halaman ini sedikit lebih tegas (radius kecil) */
+.card-actions .btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
-.btn-outline-blue {
-    background-color: transparent;
-    color: var(--primary-blue);
-    border: 1px solid var(--primary-blue);
+.card-actions .btn:hover {
+    transform: translateY(-3px) !important;
 }
 
-.btn-outline-blue:hover {
-    background-color: var(--bg-light-blue);
+.card-actions .btn-orange:hover {
+    box-shadow: 0 8px 20px rgba(248, 158, 27, 0.4) !important;
 }
 
-/* Tombol Load More */
-.load-more-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
-    position: absolute;
-    bottom: -20px;
-    left: 0;
-    z-index: 5;
-}
-
-.btn-load-more {
-    background-color: white;
-    color: var(--primary-blue);
-    font-weight: 800;
-    padding: 12px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border-color);
-}
-
-.btn-load-more:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
-}
-
-.mt-minus {
-    margin-top: 60px;
-    /* Jarak untuk mengakomodasi load more */
-}
-
-/* Responsif Tambahan untuk Halaman Kegiatan */
-@media (max-width: 1024px) {
-    .kegiatan-header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .kegiatan-layout {
-        flex-direction: column;
-    }
-
-    .sidebar-pengaturan {
-        width: 100%;
-        flex-direction: row;
-        justify-content: flex-start;
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-
-    .settings-icon {
-        flex-direction: row;
-    }
-
-    .load-more-container {
-        position: relative;
-        bottom: 0;
-    }
-}
-
-@media (max-width: 768px) {
-    /*... (biarkan kode lain yang sudah ada di sini)... */
-
-    /* Mengubah susunan menjadi 1 kolom penuh di layar HP */
-    .content-grid {
-        grid-template-columns: 1fr !important;
-    }
-
-    .search-filter-container {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .search-box input {
-        width: 100%;
-    }
-
-    .filter-box {
-        justify-content: space-between;
-    }
+.card-actions .btn-blue:hover {
+    box-shadow: 0 8px 20px rgba(24, 90, 157, 0.4) !important;
 }
