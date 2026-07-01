@@ -1,529 +1,190 @@
 /* ========================================================
-   1. RESET & CSS VARIABLES 
+   PREMIUM STYLES UNTUK PENDAFTARAN & FORMULIR (WOW EFFECT)
+   File ini melengkapi styles.css utama.
 ======================================================== */
-:root {
-    --primary-blue: #185a9d;
-    --secondary-blue: #2475c0;
-    --accent-orange: #f89e1b;
-    --orange-hover: #e08b15;
-    --bg-light-blue: #f0f7ff;
-    --bg-white: #ffffff;
-    --text-dark: #2d3748;
-    --text-gray: #64748b;
-    --footer-bg: #2d3748;
-    --border-color: #ffffff;
+
+/* --- 1. Step Cards (05-pendaftaran.html) --- */
+.step-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    border: 2px solid transparent;
+    background: linear-gradient(to bottom, #ffffff, #f8fafc);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.step-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(24, 90, 157, 0.15);
+    border-color: rgba(24, 90, 157, 0.2);
 }
 
-body {
-    font-family: 'Nunito', sans-serif;
-    color: var(--text-dark);
-    background-color: var(--bg-white);
-    line-height: 1.6;
-    padding-top: 70px;
-    overflow-x: hidden;
+.step-card .step-icon i {
+    transition: transform 0.5s ease;
 }
 
-a {
-    text-decoration: none;
-    transition: all 0.3s ease;
+.step-card:hover .step-icon i {
+    transform: scale(1.2) rotate(10deg);
 }
 
-ul {
-    list-style: none;
+.step-card .step-number {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: background-color 0.4s, color 0.4s;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.section-title {
-    text-align: center;
-    color: var(--primary-blue);
-    font-size: 1.75rem;
-    font-weight: 800;
-    margin-bottom: 40px;
-}
-
-/* ========================================================
-   2. HEADER & STICKY NAVBAR 
-======================================================== */
-.navbar {
-    background-color: var(--primary-blue);
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.navbar-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 70px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
-}
-
-.logo i {
-    font-size: 1.6rem;
-    color: white;
-}
-
-.nav-menu {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 24px;
-
-}
-
-.nav-menu li a {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    font-weight: 600;
-    padding: 8px 0;
-    position: relative;
-}
-
-.nav-menu li a:hover,
-.nav-menu li a.active {
-    color: white;
-}
-
-.nav-menu li a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    border-radius: 2px;
-}
-
-/* Styling Tombol */
-.btn {
-    display: inline-block;
-    padding: 10px 28px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    text-align: center;
-    cursor: pointer;
-    border: none;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.btn-orange {
+.step-card:hover .step-number {
     background-color: var(--accent-orange);
     color: white;
 }
 
-.btn-orange:hover {
-    background-color: var(--orange-hover);
-    color: white;
-}
-
-.btn-blue {
-    background-color: var(--primary-blue);
-    color: white;
-}
-
-.btn-blue:hover {
-    background-color: var(--secondary-blue);
-    color: white;
-}
-
-.nav-login-btn {
-    padding: 8px 24px !important;
-}
-
-/* Checkbox Hack untuk Mobile */
-.nav-toggle {
-    display: none;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.hamburger span {
-    width: 24px;
-    height: 3px;
-    background-color: white;
-    border-radius: 2px;
-    transition: 0.3s;
-}
-
-
-/* ========================================================
-   3. HERO SECTION
-======================================================== */
-.hero {
-    /* Menambahkan foto1.jpg sebagai background dengan lapisan gelap agar teks putih tetap terbaca */
-    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../images/foto_beranda.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    padding: 120px 0 160px 0;
-}
-
-.hero-inner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Memposisikan konten di tengah */
-}
-
-.hero-content {
-    max-width: 800px;
-    z-index: 2;
-    text-align: center;
-    /* Membuat teks rata tengah */
-}
-
-.hero-content h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: #ffffff;
-    /* Mengubah teks judul menjadi putih */
-    line-height: 1.25;
-    margin-bottom: 20px;
-}
-
-.hero-content p {
-    color: #e2e8f0;
-    /* Mengubah teks paragraf menjadi putih pudar */
-    font-size: 1.1rem;
-    margin: 0 auto 32px auto;
-    max-width: 90%;
-}
-
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    /* Memastikan tombol rata tengah */
-    gap: 16px;
-}
-
-/* ========================================================
-   HALAMAN FORMULIR PENDAFTARAN KEGIATAN SPESIFIK
-======================================================== */
-.form-header-title {
-    text-align: center;
-    padding: 50px 20px 30px 20px;
-}
-
-.form-header-title h1 {
-    color: var(--text-dark);
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 8px;
-}
-
-.form-header-title p {
-    color: var(--text-gray);
-    font-size: 1.05rem;
-}
-
+/* --- 2. Registration Card (Formulir Pendaftaran) --- */
 .registration-card {
-    background: white;
-    max-width: 600px;
-    margin: 0 auto 80px auto;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    border: 1px solid var(--border-color);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 25px 50px rgba(24, 90, 157, 0.1), 0 0 0 10px rgba(255,255,255,0.4);
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: visible;
 }
 
-.registration-illustration {
-    text-align: center;
-    margin-bottom: 30px;
+.registration-card::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-orange), #4facfe);
+    z-index: -1;
+    border-radius: 14px;
+    opacity: 0.3;
+    animation: gradientBorder 5s ease infinite;
+    background-size: 200% 200%;
 }
 
+@keyframes gradientBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Foto Profil / Ilustrasi Form */
 .registration-illustration img {
-    width: 180px; /* Menentukan lebar foto */
-    height: 180px; /* Tinggi disamakan agar foto proporsional */
-    object-fit: cover; /* Sangat penting: mencegah foto Anda menjadi gepeng atau penyok */
-    
-    /* Efek Bentuk Organik (Estetik & Tidak Kaku) */
-    border-radius: 20%;
-    
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Memberikan efek bayangan lembut */
-    mix-blend-mode: normal; /* Mengembalikan warna asli foto Anda */
+    border: 5px solid white;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-radius 0.5s ease;
 }
 
-/* Desain Kotak Input dengan Ikon di Kiri dan Kanan */
+.registration-illustration img:hover {
+    transform: scale(1.08) translateY(-5px);
+    border-radius: 50%;
+}
+
+/* --- 3. Input Formulir Premium --- */
 .custom-input-group {
-    display: flex;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.custom-input-group:focus-within {
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.25), 0 10px 20px rgba(0,0,0,0.05);
+    border-color: #4facfe;
+    transform: translateY(-2px);
+}
+
+.custom-input-group .icon-side i {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.custom-input-group:focus-within .icon-side i {
+    color: var(--primary-blue);
+    transform: scale(1.2);
+}
+
+.form-group label {
+    transition: color 0.3s ease, transform 0.3s ease;
+    transform-origin: left;
+}
+
+.form-group:focus-within label {
+    color: var(--primary-blue);
+}
+
+/* Textarea khusus */
+.form-control[rows] {
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
     border: 1px solid var(--border-color);
+    padding: 12px;
     border-radius: 6px;
-    overflow: hidden;
-    background: white;
-}
-
-.custom-input-group.icon-side {
-    background: #f8fafc;
-    padding: 12px 16px;
-    color: #64748b;
-    border-right: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.custom-input-group.icon-side.right {
-    border-right: none;
-    border-left: 1px solid var(--border-color);
-}
-
-.custom-input-group input {
-    flex: 1;
-    border: none;
-    padding: 12px 16px;
-    outline: none;
+    resize: vertical;
+    width: 100%;
     font-family: inherit;
     font-size: 0.95rem;
-    color: var(--text-dark);
 }
 
-.custom-input-group input:focus {
-    background-color: #f0f9ff; /* Efek biru tipis saat diketik */
+.form-control[rows]:focus {
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.25), 0 10px 20px rgba(0,0,0,0.05);
+    border-color: #4facfe;
+    outline: none;
+    transform: translateY(-2px);
 }
 
-/* Kotak Informasi & Kuota */
+/* Input file */
+input[type="file"].form-control {
+    border: 1px dashed var(--border-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input[type="file"].form-control:hover {
+    border-color: var(--primary-blue);
+    background-color: #e0f2fe !important;
+}
+
+/* --- 4. Info Kegiatan Box --- */
 .info-kegiatan-box {
-    background: #f8fafc;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 20px;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(to right bottom, #ffffff, #f8fafc);
+    border-left: 5px solid var(--primary-blue);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.info-kegiatan-box h4 {
-    color: var(--text-dark);
-    font-size: 1.05rem;
-    font-weight: 800;
-    margin-bottom: 12px;
+.info-kegiatan-box:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 25px rgba(24, 90, 157, 0.12);
 }
 
-.info-table {
-    width: 100%;
-    font-size: 0.95rem;
-    position: relative;
-    z-index: 2;
+.info-kegiatan-box .info-icon-bg {
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease;
 }
 
-.info-table td {
-    padding: 4px 0;
-    color: var(--text-dark);
+.info-kegiatan-box:hover .info-icon-bg {
+    transform: scale(1.4) rotate(-15deg);
+    opacity: 1;
 }
 
-.info-table td:first-child {
-    font-weight: 800;
-    width: 140px;
-}
-
-/* Ikon Map Latar Belakang Transparan */
-.info-icon-bg {
-    position: absolute;
-    bottom: 16px;
-    right: 20px;
-    font-size: 2rem;
-    color: var(--primary-blue);
-    opacity: 0.7;
-    z-index: 1;
-}
-
+/* Kuota Bar Premium */
 .kuota-bar {
-    background-color: #55b776; /* Warna hijau indikator */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
     color: white;
     padding: 10px 16px;
     border-radius: 6px;
     font-weight: 700;
     font-size: 0.95rem;
-}
-
-/* Barisan Tombol Bawah */
-.action-buttons-row {
-    display: flex;
-    gap: 16px;
-}
-
-.action-buttons-row.btn {
-    flex: 1; /* Membuat kedua tombol membagi ruang 50:50 */
     text-align: center;
-    padding: 14px 0;
-    font-size: 1.05rem;
 }
 
-.action-buttons-row {
-        flex-direction: column; /* Tombol atas bawah di HP */
-    }
-   .registration-card {
-        padding: 30px 20px; /* Padding lebih kecil di HP */
-    }
-
-
-/* ========================================================
-   7. FOOTER
-======================================================== */
-.footer {
-    background-color: var(--footer-bg);
-    color: white;
-    padding: 40px 0 20px 0;
+.kuota-bar:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-.footer-info {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-bottom: 30px;
+/* Action Buttons hover efek glow */
+.action-buttons-row .btn {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.footer-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.95rem;
+.action-buttons-row .btn-orange:hover {
+    box-shadow: 0 8px 25px rgba(248, 158, 27, 0.5);
+    transform: translateY(-3px);
 }
-
-.footer-item i {
-    font-size: 1.25rem;
+.action-buttons-row .btn-blue:hover {
+    box-shadow: 0 8px 25px rgba(24, 90, 157, 0.5);
+    transform: translateY(-3px);
 }
-
-.copyright {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-    font-size: 0.85rem;
-    color: #cbd5e1;
-}
-
-
-/* ========================================================
-   8. MEDIA QUERY RESPONSIF
-======================================================== */
-
-@media (max-width: 1024px) {
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .categories-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .activities-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: var(--primary-blue);
-        flex-direction: column;
-        padding: 20px 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-toggle:checked~.nav-menu {
-        display: flex;
-    }
-
-    .hero-inner {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-
-    .hero-content p {
-        margin: 0 auto 30px auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-
-    .footer-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-
-    /* --- INI ADALAH KODE YANG DITAMBAHKAN --- */
-    /* Mengubah formulir & peta menjadi 1 baris lurus ke bawah di HP */
-    .form-map-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .categories-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .activities-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-buttons,
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
-}
-
