@@ -38,7 +38,7 @@ ul {
     list-style: none;
 }
 
-img {
+img:not(.member-img) {
     max-width: 100%;
     height: auto;
 }
@@ -67,7 +67,7 @@ img {
     text-align: center;
     cursor: pointer;
     border: none;
-    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn:hover {
@@ -81,17 +81,17 @@ img {
 .btn-blue:hover { background-color: var(--secondary-blue); color: white; }
 
 /* ========================================================
-   2. HEADER & NAVIGASI STICKY
-======================================================== */
+   2. HEADER & NAVBAR
+ ======================================================== */
 .navbar {
-    background-color: var(--primary-blue);
+    background: linear-gradient(to right, #0a3a60, #14b8a6, #38bdf8);
     color: white;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9999;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 
 .navbar-inner {
@@ -105,54 +105,81 @@ img {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: white;
+    white-space: nowrap;
 }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 32px;
+.logo i {
+    font-size: 1.5rem;
+    color: var(--accent-orange);
 }
 
-.nav-menu li {
+/* Nav Menu */
+.nav-menu ul {
     display: flex;
     align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .nav-menu li a {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
     font-weight: 600;
-    padding: 8px 0;
+    padding: 8px 12px;
+    border-radius: 8px;
     position: relative;
+    display: block;
+    transition: all 0.3s ease;
 }
 
 .nav-menu li a:hover,
 .nav-menu li a.active {
     color: white;
+    background-color: rgba(255, 255, 255, 0.12);
 }
 
 .nav-menu li a.active::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    bottom: 4px;
+    left: 12px;
+    right: 12px;
     height: 2px;
-    background-color: white;
+    background-color: var(--accent-orange);
     border-radius: 2px;
 }
 
 .nav-login-btn {
-    padding: 8px 24px!important;
+    padding: 8px 20px !important;
 }
 
-/* Hamburger Menu untuk Mobile */
-.nav-toggle { display: none; }
-.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
-.hamburger span { width: 24px; height: 3px; background-color: white; border-radius: 2px; transition: 0.3s; }
+/* Hamburger */
+.nav-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 10000;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    display: block;
+}
 
 /* ========================================================
    3. HERO SECTION (BAGIAN ATAS)
@@ -238,7 +265,7 @@ img {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .category-card:hover {
@@ -291,10 +318,16 @@ img {
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
     border: 1px solid var(--border-color);
     margin-bottom: 40px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-group-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .team-group-img {
-    flex: 1;
+    flex: 0 0 40%;
     min-height: 300px;
 }
 
@@ -305,7 +338,7 @@ img {
 }
 
 .team-group-text {
-    flex: 1;
+    flex: 0 0 60%;
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -325,7 +358,10 @@ img {
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.04);
     border: 1px solid var(--border-color);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .member-card:hover {
@@ -336,10 +372,16 @@ img {
 .member-img {
     width: 120px;
     height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    max-width: 120px;
+    max-height: 120px;
     border-radius: 50%;
     object-fit: cover;
+    object-position: top center;
     margin: 0 auto 20px auto;
     border: 4px solid var(--bg-light-blue);
+    display: block;
 }
 
 .member-name {
@@ -458,54 +500,56 @@ img {
 
 @media (max-width: 768px) {
     /* Penyesuaian Navbar Mobile */
-   .logo {
+    .logo {
         max-width: 75%;
         font-size: 1rem;
     }
-    
-   .navbar-inner {
+
+    .navbar-inner {
         flex-wrap: wrap;
         height: auto;
         min-height: 70px;
         padding: 10px 0;
     }
-    
-   .hamburger {
+
+    .hamburger {
         display: flex;
         position: relative;
         z-index: 10;
     }
 
-   .nav-menu {
+    .nav-menu {
         display: none;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
         background-color: var(--primary-blue);
-        flex-direction: column;
-        padding: 20px 0;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        gap: 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
     }
 
-   .nav-toggle:checked ~.nav-menu {
-        display: flex;
-    }
-
-   .nav-menu li {
-        align-items: flex-start;
-        margin-bottom: 4px;
-    }
-
-   .nav-menu li a {
+    .nav-toggle:checked~.nav-menu {
         display: block;
-        padding: 10px 24px;
-        border-radius: 0;
-        width: 100%;
     }
 
-   .nav-menu li a.active::after {
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 0;
+        margin: 0;
+        list-style: none;
+        gap: 2px;
+    }
+
+    .nav-menu li a {
+        padding: 12px 24px;
+        border-radius: 0;
+        font-size: 0.95rem;
+    }
+
+    .nav-menu li a.active::after {
         display: none;
     }
 
@@ -562,4 +606,57 @@ img {
    .btn {
         width: 100%;
     }
+
+    .logo span {
+        display: none;
+    }
+
+    .logo {
+        gap: 8px;
+    }
+}
+/* -------------------------------------------------------
+   Responsive adjustments for team section (lihat tim kami)
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Reduce gap between team cards on medium screens */
+  .team-group-card {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack image and text vertically */
+  .team-group-img {
+    flex: 0 0 100%;
+    min-height: 250px;
+  }
+  .team-group-text {
+    flex: 0 0 100%;
+    padding: 24px;
+  }
+  /* Team members grid becomes single column */
+  .team-members-grid {
+    grid-template-columns: 1fr;
+  }
+  .member-card {
+    padding: 24px 16px;
+  }
+  .member-img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-group-text h3 {
+    font-size: 1.3rem;
+  }
+  .member-name {
+    font-size: 1.1rem;
+  }
+  .member-role {
+    font-size: 0.75rem;
+  }
 }
