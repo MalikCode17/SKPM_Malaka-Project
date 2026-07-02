@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Profil Pengguna - Sistem Pendaftaran Kegiatan Mahasiswa MALAKA">
+    <title>Profil Saya - Portal MALAKA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGASI ===== -->
+    <header class="navbar" role="banner">
+        <div class="container navbar-inner">
+            <a href="03-index.html" class="logo" aria-label="Beranda MALAKA">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
+            </a>
+
+            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
+            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <div class="mobile-menu-header">
+                    <a href="03-index.html" class="mobile-logo">
+                        <i class="fas fa-graduation-cap"></i> SPKM
+                    </a>
+                    <label for="navToggle" class="close-menu"><i class="fas fa-times"></i></label>
+                </div>
+                <div id="mobileProfileBlock"></div>
+                
+                <ul>
+                    <li><a href="03-index.html"><i class="fas fa-home nav-icon"></i> Beranda</a></li>
+                    <li><a href="04-kegiatan.html"><i class="fas fa-calendar-alt nav-icon"></i> Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html"><i class="fas fa-clipboard-list nav-icon"></i> Pendaftaran</a></li>
+                    <li><a href="06-tentang.html"><i class="fas fa-info-circle nav-icon"></i> Tentang</a></li>
+                    <li><a href="07-kontak.html"><i class="fas fa-phone-alt nav-icon"></i> Kontak</a></li>
+                    <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
+                </ul>
+            
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== KONTEN UTAMA ===== -->
+    <main id="main-content" style="padding-top: 100px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="login-role-card" style="max-width: 700px; margin: 0 auto; overflow: visible;">
+
+                <div style="text-align: center; margin-bottom: 24px;">
+                    <div id="profileImageContainer" style="position: relative; display: inline-block; cursor: pointer;"
+                        title="Klik untuk mengubah foto profil">
+                        <div id="profileImage"
+                            style="width: 100px; height: 100px; border-radius: 50%; background-color: var(--primary-blue); color: white; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: 700; overflow: hidden; background-size: cover; background-position: center;">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div
+                            style="position: absolute; bottom: 0; right: 0; background-color: var(--accent-orange); color: #ffffff; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border: 3px solid var(--bg-white); box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+                            <i class="fas fa-camera" style="font-size: 0.9rem;"></i>
+                        </div>
+                    </div>
+                    <input type="file" id="foto-profil" accept=".jpg, .jpeg, .png" style="display: none;">
+                    <h2 id="profileNameDisplay" style="margin-top: 16px;">Profil Pengguna</h2>
+                </div>
+
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="prof_nama">Nama Lengkap</label>
+                        <input type="text" id="prof_nama" class="form-control" disabled required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prof_nim">NIM</label>
+                        <input type="text" id="prof_nim" class="form-control" disabled required>
+                    </div>
+
+                    <div class="form-group prodi-input-group">
+                        <span class="prodi-label">Program Studi</span>
+                        <select id="prof_prodi" class="prodi-select" disabled required>
+                            <option value="ti">Teknik Informatika</option>
+                            <option value="si">Sistem Informasi</option>
+                            <option value="te">Teknologi Informasi</option>
+                            <option value="mn">Manajemen</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prof_email">Email</label>
+                        <input type="email" id="prof_email" class="form-control" disabled required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prof_hp">Nomor HP</label>
+                        <input type="text" id="prof_hp" class="form-control" disabled placeholder="Contoh: 08123456789">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prof_semester">Semester</label>
+                        <input type="number" id="prof_semester" class="form-control" disabled min="1" max="14"
+                            placeholder="Contoh: 3">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prof_angkatan">Tahun Angkatan</label>
+                        <select id="prof_angkatan" class="form-control" disabled required>
+                            <option value="2026">2026</option>
+                            <option value="2025">2025</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2019">2019</option>
+                        </select>
+                    </div>
+
+                    <div style="display: flex; gap: 16px; margin-top: 32px;">
+                        <button type="button" id="btn-edit-profil" class="btn btn-blue" style="flex: 1;">
+                            <i class="fas fa-edit"></i> Edit Profil
+                        </button>
+                        <button type="submit" id="btn-simpan-profil" class="btn btn-orange"
+                            style="flex: 1; display: none;">
+                            <i class="fas fa-save"></i> Simpan
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="scenery-ornament" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
+            style="height: 150px;">
+            <path fill="#34d399" opacity="0.5"
+                d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
+            <path fill="#10b981" opacity="0.8"
+                d="M0,200 C200,100 500,250 800,120 C1100,-10 1300,150 1440,160 L1440,200 L0,200 Z"></path>
+            <path fill="#2d3748" d="M0,200 C400,150 800,250 1200,160 C1350,130 1400,180 1440,190 L1440,200 L0,200 Z">
+            </path>
+        </svg>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-info">
+                <div class="footer-item">
+                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                    <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <span>malaka.education@kampus.ac.id</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                    <span>@malaka.edu</span>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.</p>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/profile.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
