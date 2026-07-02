@@ -32,14 +32,23 @@
             </label>
 
             <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <div class="mobile-menu-header">
+                    <a href="03-index.html" class="mobile-logo">
+                        <i class="fas fa-graduation-cap"></i> SPKM
+                    </a>
+                    <label for="navToggle" class="close-menu"><i class="fas fa-times"></i></label>
+                </div>
+                <div id="mobileProfileBlock"></div>
+                
                 <ul>
-                    <li><a href="03-index.html">Beranda</a></li>
-                    <li><a href="04-kegiatan.html">Kegiatan</a></li>
-                    <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
-                    <li><a href="06-tentang.html">Tentang</a></li>
-                    <li><a href="07-kontak.html" class="active" aria-current="page">Kontak</a></li>
+                    <li><a href="03-index.html"><i class="fas fa-home nav-icon"></i> Beranda</a></li>
+                    <li><a href="04-kegiatan.html"><i class="fas fa-calendar-alt nav-icon"></i> Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html"><i class="fas fa-clipboard-list nav-icon"></i> Pendaftaran</a></li>
+                    <li><a href="06-tentang.html"><i class="fas fa-info-circle nav-icon"></i> Tentang</a></li>
+                    <li><a href="07-kontak.html" class="active" aria-current="page"><i class="fas fa-phone-alt nav-icon"></i> Kontak</a></li>
                     <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
                 </ul>
+            
             </nav>
         </div>
     </header>
@@ -119,7 +128,7 @@
                     <article class="contact-card">
                         <h3 class="card-heading"><i class="fas fa-list-alt text-blue" aria-hidden="true"></i> Kirim
                             Pesan kepada Kami</h3>
-                        <form action="#" method="POST">
+                        <form id="form-kontak">
                             <div class="form-group">
                                 <label for="nama_kontak" class="visually-hidden" style="display:none;">Nama
                                     Lengkap</label>
@@ -198,7 +207,7 @@
                         <div class="faq-answer">
                             <p>Anda akan diarahkan ke formulir pendaftaran. Pastikan mengisi data diri dengan benar
                                 (Nama, NIM, dan Email). Setelah berhasil, Anda akan menerima konfirmasi pendaftaran atau
-                                masuk ke grup koordinasi jika tersedia.</p>
+                                email balasan otomatis mengenai detail selanjutnya.</p>
                         </div>
                     </details>
 
@@ -264,6 +273,11 @@
         </div>
     </footer>
 
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/kontak.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
