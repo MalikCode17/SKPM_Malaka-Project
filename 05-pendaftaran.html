@@ -33,14 +33,23 @@
             </label>
 
             <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <div class="mobile-menu-header">
+                    <a href="03-index.html" class="mobile-logo">
+                        <i class="fas fa-graduation-cap"></i> SPKM
+                    </a>
+                    <label for="navToggle" class="close-menu"><i class="fas fa-times"></i></label>
+                </div>
+                <div id="mobileProfileBlock"></div>
+                
                 <ul>
-                    <li><a href="03-index.html">Beranda</a></li>
-                    <li><a href="04-kegiatan.html">Kegiatan</a></li>
-                    <li><a href="05-pendaftaran.html" class="active" aria-current="page">Pendaftaran</a></li>
-                    <li><a href="06-tentang.html">Tentang</a></li>
-                    <li><a href="07-kontak.html">Kontak</a></li>
+                    <li><a href="03-index.html"><i class="fas fa-home nav-icon"></i> Beranda</a></li>
+                    <li><a href="04-kegiatan.html"><i class="fas fa-calendar-alt nav-icon"></i> Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html" class="active" aria-current="page"><i class="fas fa-clipboard-list nav-icon"></i> Pendaftaran</a></li>
+                    <li><a href="06-tentang.html"><i class="fas fa-info-circle nav-icon"></i> Tentang</a></li>
+                    <li><a href="07-kontak.html"><i class="fas fa-phone-alt nav-icon"></i> Kontak</a></li>
                     <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
                 </ul>
+            
             </nav>
         </div>
     </header>
@@ -126,32 +135,30 @@
                 <div class="activities-grid">
 
                     <article class="activity-card">
-                        <h3>Open Recruitment BEM</h3>
+                        <h3>Open Recruitment HIMA</h3>
                         <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>15 Agustus 2026</span></li>
-                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Gedung Kemahasiswaan</span></li>
-                            <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 30 Peserta</span></li>
+                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>1-10 Oktober 2026</span></li>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Sekretariat HIMA</span></li>
+                            <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 100 Calon Anggota</span></li>
                             <li><i class="fas fa-tag" aria-hidden="true"></i><span>Organisasi Mahasiswa</span></li>
                         </ul>
                         <div class="card-actions">
-                            <a href="pendaftaran_kegiatan/03-pendaftaran-organisasi.html"
-                                class="btn btn-orange w-100" id="btn-daftar-bem">
+                            <a href="#" class="btn btn-orange w-100 btn-daftar-trigger" data-id="ACT009">
                                 <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar
                             </a>
                         </div>
                     </article>
 
                     <article class="activity-card">
-                        <h3>Business Case Supply Chain &amp; BCP</h3>
+                        <h3>Lomba Pengembangan Aplikasi</h3>
                         <ul class="activity-details">
-                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>25 Juni 2026</span></li>
-                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Aula Utama</span></li>
-                            <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 40 Tim</span></li>
+                            <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>20 Juli 2026</span></li>
+                            <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Lab Komputer</span></li>
+                            <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 30 Tim</span></li>
                             <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
                         </ul>
                         <div class="card-actions">
-                            <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html"
-                                class="btn btn-orange w-100" id="btn-daftar-bcp">
+                            <a href="#" class="btn btn-orange w-100 btn-daftar-trigger" data-id="ACT005">
                                 <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar
                             </a>
                         </div>
@@ -166,7 +173,7 @@
                             <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
                         </ul>
                         <div class="card-actions">
-                            <a href="#" class="btn btn-outline-blue w-100" id="btn-daftar-bootcamp" aria-disabled="true">
+                            <a href="#" class="btn btn-outline-blue w-100" aria-disabled="true">
                                 <i class="fas fa-lock" aria-hidden="true"></i> Pendaftaran Ditutup
                             </a>
                         </div>
@@ -181,8 +188,7 @@
                             <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
                         </ul>
                         <div class="card-actions">
-                            <a href="pendaftaran_kegiatan/04-pendaftaran-pelatihan.html"
-                                class="btn btn-orange w-100" id="btn-daftar-speaking">
+                            <a href="#" class="btn btn-orange w-100 btn-daftar-trigger" data-id="ACT010">
                                 <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar
                             </a>
                         </div>
@@ -243,6 +249,10 @@
         </div>
     </footer>
 
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
