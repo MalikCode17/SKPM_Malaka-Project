@@ -32,14 +32,23 @@
             </label>
 
             <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <div class="mobile-menu-header">
+                    <a href="03-index.html" class="mobile-logo">
+                        <i class="fas fa-graduation-cap"></i> SPKM
+                    </a>
+                    <label for="navToggle" class="close-menu"><i class="fas fa-times"></i></label>
+                </div>
+                <div id="mobileProfileBlock"></div>
+                
                 <ul>
-                    <li><a href="03-index.html">Beranda</a></li>
-                    <li><a href="04-kegiatan.html">Kegiatan</a></li>
-                    <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
-                    <li><a href="06-tentang.html" class="active" aria-current="page">Tentang</a></li>
-                    <li><a href="07-kontak.html">Kontak</a></li>
+                    <li><a href="03-index.html"><i class="fas fa-home nav-icon"></i> Beranda</a></li>
+                    <li><a href="04-kegiatan.html"><i class="fas fa-calendar-alt nav-icon"></i> Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html"><i class="fas fa-clipboard-list nav-icon"></i> Pendaftaran</a></li>
+                    <li><a href="06-tentang.html" class="active" aria-current="page"><i class="fas fa-info-circle nav-icon"></i> Tentang</a></li>
+                    <li><a href="07-kontak.html"><i class="fas fa-phone-alt nav-icon"></i> Kontak</a></li>
                     <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
                 </ul>
+            
             </nav>
         </div>
     </header>
@@ -62,7 +71,7 @@
                         <a href="#visi" class="btn btn-blue" id="btn-pelajari-visi">
                             <i class="fas fa-eye" aria-hidden="true"></i> Pelajari Visi Kami
                         </a>
-                        <a href="lihat_tim_kami/00-lihat-tim-kami.html#tim" class="btn btn-orange" id="btn-lihat-tim">
+                        <a href="13-tim.html#tim" class="btn btn-orange" id="btn-lihat-tim">
                             <i class="fas fa-users" aria-hidden="true"></i> Lihat Tim Kami
                         </a>
                     </div>
@@ -124,28 +133,28 @@
                         <div class="icon-circle icon-1" aria-hidden="true"><i class="fas fa-rocket"></i></div>
                         <h3>Akses Mudah &amp; Cepat</h3>
                         <p>Cari dan daftar kegiatan di mana saja dengan platform yang responsif.</p>
-                        <a href="detail_keunggulan_platform/01-aksesmudah&cepat.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                        <a href="12-keunggulan.html?id=1" class="btn btn-outline-blue w-100">Detail Fitur</a>
                     </article>
 
                     <article class="feature-card">
                         <div class="icon-circle icon-2" aria-hidden="true"><i class="fas fa-server"></i></div>
                         <h3>Informasi Terpusat</h3>
                         <p>Satu tempat terintegrasi untuk semua kegiatan kampus Anda.</p>
-                        <a href="detail_keunggulan_platform/02-informasi-terpusat.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                        <a href="12-keunggulan.html?id=2" class="btn btn-outline-blue w-100">Detail Fitur</a>
                     </article>
 
                     <article class="feature-card">
                         <div class="icon-circle icon-3" aria-hidden="true"><i class="fas fa-chart-line"></i></div>
                         <h3>Pelacakan Kemajuan</h3>
                         <p>Pantau sertifikat dan partisipasi Anda secara real-time.</p>
-                        <a href="detail_keunggulan_platform/03-pelacakan-kemajuan.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                        <a href="12-keunggulan.html?id=3" class="btn btn-outline-blue w-100">Detail Fitur</a>
                     </article>
 
                     <article class="feature-card">
                         <div class="icon-circle icon-4" aria-hidden="true"><i class="fas fa-shield-alt"></i></div>
                         <h3>Keamanan Data</h3>
                         <p>Melindungi privasi dan data pribadi dengan standar tinggi.</p>
-                        <a href="detail_keunggulan_platform/04-keamanan-data.html" class="btn btn-outline-blue w-100">Detail Fitur</a>
+                        <a href="12-keunggulan.html?id=4" class="btn btn-outline-blue w-100">Detail Fitur</a>
                     </article>
 
                 </div>
@@ -198,6 +207,10 @@
         </div>
     </footer>
 
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
