@@ -33,14 +33,23 @@
             </label>
 
             <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+                <div class="mobile-menu-header">
+                    <a href="03-index.html" class="mobile-logo">
+                        <i class="fas fa-graduation-cap"></i> SPKM
+                    </a>
+                    <label for="navToggle" class="close-menu"><i class="fas fa-times"></i></label>
+                </div>
+                <div id="mobileProfileBlock"></div>
+                
                 <ul>
-                    <li><a href="03-index.html">Beranda</a></li>
-                    <li><a href="04-kegiatan.html" class="active" aria-current="page">Kegiatan</a></li>
-                    <li><a href="05-pendaftaran.html">Pendaftaran</a></li>
-                    <li><a href="06-tentang.html">Tentang</a></li>
-                    <li><a href="07-kontak.html">Kontak</a></li>
+                    <li><a href="03-index.html"><i class="fas fa-home nav-icon"></i> Beranda</a></li>
+                    <li><a href="04-kegiatan.html" class="active" aria-current="page"><i class="fas fa-calendar-alt nav-icon"></i> Kegiatan</a></li>
+                    <li><a href="05-pendaftaran.html"><i class="fas fa-clipboard-list nav-icon"></i> Pendaftaran</a></li>
+                    <li><a href="06-tentang.html"><i class="fas fa-info-circle nav-icon"></i> Tentang</a></li>
+                    <li><a href="07-kontak.html"><i class="fas fa-phone-alt nav-icon"></i> Kontak</a></li>
                     <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
                 </ul>
+            
             </nav>
         </div>
     </header>
@@ -51,20 +60,30 @@
         <!-- Filter Kategori -->
         <section class="kegiatan-header-section" aria-label="Filter Kegiatan">
             <div class="container kegiatan-header-inner">
-                <div class="filter-wrapper">
-                    <input type="checkbox" id="kategoriToggle" class="kategori-toggle" aria-hidden="true">
-                    <label for="kategoriToggle" class="filter-box" id="btn-filter-kategori">
-                        <i class="fas fa-filter" aria-hidden="true"></i>
-                        <span>Filter Kategori</span>
-                        <i class="fas fa-chevron-down arrow-icon" aria-hidden="true"></i>
-                    </label>
-                    <ul class="kategori-dropdown" role="menu" aria-label="Pilih kategori kegiatan">
-                        <li role="none"><a href="04-kegiatan.html" role="menuitem">Semua Kegiatan</a></li>
-                        <li role="none"><a href="kegiatan_kategori/01-kegiatan-seminar.html" role="menuitem">Seminar &amp; Workshop</a></li>
-                        <li role="none"><a href="kegiatan_kategori/02-kegiatan-lomba.html" role="menuitem">Lomba Akademik</a></li>
-                        <li role="none"><a href="kegiatan_kategori/03-kegiatan-organisasi.html" role="menuitem">Organisasi Mahasiswa</a></li>
-                        <li role="none"><a href="kegiatan_kategori/04-kegiatan-pelatihan.html" role="menuitem">Pelatihan Soft Skill</a></li>
-                    </ul>
+                <div class="filter-wrapper" style="display: flex; gap: 16px; width: 100%; flex-wrap: wrap;">
+                    
+                    <!-- Search Bar -->
+                    <div class="search-box" style="flex: 1; min-width: 250px; position: relative;">
+                        <input type="text" id="search-kegiatan" class="form-control" placeholder="Cari nama kegiatan atau kategori..." style="width: 100%; padding-left: 40px; border-radius: 8px;">
+                        <i class="fas fa-search" style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #64748b;"></i>
+                    </div>
+
+                    <!-- Dropdown Kategori -->
+                    <div style="position: relative;">
+                        <input type="checkbox" id="kategoriToggle" class="kategori-toggle" aria-hidden="true">
+                        <label for="kategoriToggle" class="filter-box" id="btn-filter-kategori">
+                            <i class="fas fa-filter" aria-hidden="true"></i>
+                            <span id="active-category-text">Semua Kegiatan</span>
+                            <i class="fas fa-chevron-down arrow-icon" aria-hidden="true"></i>
+                        </label>
+                        <ul class="kategori-dropdown" role="menu" aria-label="Pilih kategori kegiatan">
+                            <li role="none"><a href="#" class="category-filter" data-category="Semua Kegiatan" role="menuitem">Semua Kegiatan</a></li>
+                            <li role="none"><a href="#" class="category-filter" data-category="Seminar & Workshop" role="menuitem">Seminar &amp; Workshop</a></li>
+                            <li role="none"><a href="#" class="category-filter" data-category="Lomba Akademik" role="menuitem">Lomba Akademik</a></li>
+                            <li role="none"><a href="#" class="category-filter" data-category="Organisasi Mahasiswa" role="menuitem">Organisasi Mahasiswa</a></li>
+                            <li role="none"><a href="#" class="category-filter" data-category="Pelatihan Soft Skill" role="menuitem">Pelatihan Soft Skill</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -74,7 +93,12 @@
             <div class="container">
                 <h1 class="section-title" id="kegiatan-all-heading">Semua Kegiatan Mahasiswa</h1>
                 <div class="kegiatan-layout">
-                    <div class="activities-grid content-grid">
+                    <div class="activities-grid content-grid" id="activities-container">
+                        
+                        <p id="no-results-msg" style="display: none; text-align: center; width: 100%; grid-column: 1 / -1; padding: 40px; color: #64748b; font-size: 1.1rem; background: #f8fafc; border-radius: 8px; border: 1px dashed #cbd5e1;">
+                            <i class="fas fa-search" style="font-size: 2rem; margin-bottom: 16px; display: block; color: #94a3b8;"></i>
+                            Kegiatan tidak ditemukan.
+                        </p>
 
                         <!-- Seminar & Workshop -->
                         <article class="activity-card relative-card">
@@ -87,8 +111,8 @@
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/01-pendaftaran-seminar.html" class="btn btn-orange" id="btn-daftar-uiux">Daftar</a>
-                                <a href="detail_kegiatan/01-detail-seminar.html" class="btn btn-blue" id="btn-detail-uiux">Detail</a>
+                                <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT001">Daftar</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT001">Detail</a>
                             </div>
                         </article>
 
@@ -102,8 +126,8 @@
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/01-pendaftaran-seminar.html" class="btn btn-orange" id="btn-daftar-js">Daftar</a>
-                                <a href="detail_kegiatan/01-detail-seminar.html" class="btn btn-blue" id="btn-detail-js">Detail</a>
+                                <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT002">Daftar</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT002">Detail</a>
                             </div>
                         </article>
 
@@ -117,8 +141,8 @@
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="#" class="btn btn-outline-blue" id="btn-daftar-kwu" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
-                                <a href="#" class="btn btn-blue" id="btn-detail-kwu">Detail</a>
+                                <a href="#" class="btn btn-outline-blue" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT003">Detail</a>
                             </div>
                         </article>
 
@@ -132,8 +156,8 @@
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Seminar &amp; Workshop</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/01-pendaftaran-seminar.html" class="btn btn-orange" id="btn-daftar-sap">Daftar</a>
-                                <a href="detail_kegiatan/01-detail-seminar.html" class="btn btn-blue" id="btn-detail-sap">Detail</a>
+                                <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT004">Daftar</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT004">Detail</a>
                             </div>
                         </article>
 
@@ -148,84 +172,69 @@
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-app">Daftar</a>
-                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-app">Detail</a>
+                                <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT005">Daftar</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT005">Detail</a>
                             </div>
                         </article>
 
                         <article class="activity-card relative-card">
                             <span class="badge-status">POPULER</span>
-                            <h3>Business Case Supply Chain &amp; BCP</h3>
+                            <h3>Lomba Desain Poster Nasional</h3>
                             <ul class="activity-details">
-                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>25 Juni 2026</span></li>
-                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Aula Utama</span></li>
-                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 40 Tim</span></li>
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>5 Agustus 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Online</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: Tidak Terbatas</span></li>
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-bcp">Daftar</a>
-                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-bcp">Detail</a>
+                                <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT006">Daftar</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT006">Detail</a>
                             </div>
                         </article>
-
+                        
                         <article class="activity-card relative-card">
-                            <span class="badge-status bg-green">TERBARU</span>
-                            <h3>Lomba Debat Nasional</h3>
+                            <span class="badge-status bg-gray">COMING SOON</span>
+                            <h3>Hackathon Inovasi Kampus</h3>
                             <ul class="activity-details">
-                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>3 September 2026</span></li>
-                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Online (Zoom)</span></li>
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>25-26 Agustus 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Gedung Pusat Inovasi</span></li>
                                 <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 20 Tim</span></li>
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-debat">Daftar</a>
-                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-debat">Detail</a>
-                            </div>
-                        </article>
-
-                        <article class="activity-card relative-card">
-                            <span class="badge-status">POPULER</span>
-                            <h3>Hackathon Frontend Web Dev</h3>
-                            <ul class="activity-details">
-                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>25 April 2026</span></li>
-                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Lab Komputer 1</span></li>
-                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 50 Tim</span></li>
-                                <li><i class="fas fa-tag" aria-hidden="true"></i><span>Lomba Akademik</span></li>
-                            </ul>
-                            <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/02-pendaftaran-lomba.html" class="btn btn-orange" id="btn-daftar-hackathon">Daftar</a>
-                                <a href="detail_kegiatan/02-detail-lomba.html" class="btn btn-blue" id="btn-detail-hackathon">Detail</a>
+                                <a href="#" class="btn btn-outline-blue" aria-disabled="true">Segera Dibuka</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT007">Detail</a>
                             </div>
                         </article>
 
                         <!-- Organisasi -->
                         <article class="activity-card relative-card">
-                            <span class="badge-status">POPULER</span>
-                            <h3>Open Recruitment BEM</h3>
+                            <span class="badge-status">INTERNAL</span>
+                            <h3>Rapat Anggota BEM</h3>
                             <ul class="activity-details">
-                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>15 Agustus 2026</span></li>
-                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Gedung Kemahasiswaan</span></li>
-                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 30 Peserta</span></li>
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>15 September 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Ruang Rapat Utama</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: Seluruh Anggota</span></li>
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Organisasi Mahasiswa</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/03-pendaftaran-organisasi.html" class="btn btn-orange" id="btn-daftar-bem">Daftar</a>
-                                <a href="detail_kegiatan/03-detail-organisasi.html" class="btn btn-blue" id="btn-detail-bem">Detail</a>
+                                <a href="#" class="btn btn-outline-blue" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Khusus Anggota</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT008">Detail</a>
                             </div>
                         </article>
-
+                        
                         <article class="activity-card relative-card">
-                            <span class="badge-status bg-red">PENUH</span>
-                            <h3>Open Recruitment Himpunan Mahasiswa</h3>
+                            <span class="badge-status bg-green">TERBARU</span>
+                            <h3>Open Recruitment HIMA</h3>
                             <ul class="activity-details">
-                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>22–24 April 2026</span></li>
-                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Sekretariat Organisasi</span></li>
-                                <li><i class="fas fa-lock" aria-hidden="true"></i><span>Kuota: <span class="text-red">Penuh</span></span></li>
+                                <li><i class="far fa-calendar-alt" aria-hidden="true"></i><span>1-10 Oktober 2026</span></li>
+                                <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i><span>Sekretariat HIMA</span></li>
+                                <li><i class="fas fa-users" aria-hidden="true"></i><span>Kuota: 100 Calon Anggota</span></li>
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Organisasi Mahasiswa</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="#" class="btn btn-outline-blue" id="btn-daftar-hima" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
-                                <a href="#" class="btn btn-blue" id="btn-detail-hima">Detail</a>
+                                <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT009">Daftar</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT009">Detail</a>
                             </div>
                         </article>
 
@@ -240,8 +249,8 @@
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="pendaftaran_kegiatan/04-pendaftaran-pelatihan.html" class="btn btn-orange" id="btn-daftar-speaking">Daftar</a>
-                                <a href="detail_kegiatan/04-detail-pelatihan.html" class="btn btn-blue" id="btn-detail-speaking">Detail</a>
+                                <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT010">Daftar</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT010">Detail</a>
                             </div>
                         </article>
 
@@ -255,8 +264,8 @@
                                 <li><i class="fas fa-tag" aria-hidden="true"></i><span>Pelatihan Soft Skill</span></li>
                             </ul>
                             <div class="card-actions">
-                                <a href="#" class="btn btn-outline-blue" id="btn-daftar-bootcamp" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
-                                <a href="#" class="btn btn-blue" id="btn-detail-bootcamp">Detail</a>
+                                <a href="#" class="btn btn-outline-blue" aria-disabled="true"><i class="fas fa-lock" aria-hidden="true"></i> Penuh</a>
+                                <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT011">Detail</a>
                             </div>
                         </article>
 
@@ -300,6 +309,16 @@
         </div>
     </footer>
 
+    <!-- Scroll To Top Button -->
+    <button id="btn-scroll-top" class="btn-scroll-top" aria-label="Kembali ke atas">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/kegiatan.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
