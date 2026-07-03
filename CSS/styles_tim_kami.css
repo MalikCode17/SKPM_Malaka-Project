@@ -338,11 +338,13 @@ img:not(.member-img) {
 }
 
 .team-group-text {
-    flex: 0 0 60%;
-    padding: 40px;
+    flex: 1;
+    padding: 60px 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .team-members-grid {
