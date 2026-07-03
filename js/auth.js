@@ -37,7 +37,7 @@ const Auth = {
                         UI.showAlert('Login berhasil!', 'success');
                         
                         setTimeout(() => {
-                            window.location.href = '03-index.html';
+                            window.location.href = 'index.html';
                         }, 500);
                     }, 800);
                 } else {

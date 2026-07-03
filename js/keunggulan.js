@@ -4,14 +4,14 @@ const Keunggulan = {
         const keunggulanId = parseInt(urlParams.get('id'));
 
         if (!keunggulanId) {
-            window.location.href = '03-index.html';
+            window.location.href = 'index.html';
             return;
         }
 
         const dataKeunggulan = window.keunggulanData.find(k => k.id === keunggulanId);
 
         if (!dataKeunggulan) {
-            window.location.href = '03-index.html';
+            window.location.href = 'index.html';
             return;
         }
 
