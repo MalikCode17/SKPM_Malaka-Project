@@ -185,7 +185,7 @@ img:not(.member-img) {
    3. HERO SECTION (BAGIAN ATAS)
 ======================================================== */
 .hero-tentang {
-    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('/images/foto_tentang.jpg');
+    background-image: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), url('../images/foto_tentang.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
