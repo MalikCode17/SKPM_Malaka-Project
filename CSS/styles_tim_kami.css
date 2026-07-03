@@ -339,7 +339,7 @@ img:not(.member-img) {
 
 .team-group-text {
     flex: 1;
-    padding: 60px 40px;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
