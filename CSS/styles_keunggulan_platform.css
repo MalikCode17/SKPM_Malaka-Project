@@ -5,170 +5,197 @@
 
 /* 1. Gambar Konten Kiri (Hover, Scale, & Shadow) */
 .detail-left img.w-100 {
-    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.6s ease;
-    box-shadow: 0 15px 35px rgba(24, 90, 157, 0.15);
-    border: 4px solid white;
-    transform-origin: center;
+  transition:
+    transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.6s ease;
+  box-shadow: 0 15px 35px rgba(24, 90, 157, 0.15);
+  border: 4px solid white;
+  transform-origin: center;
 }
 
 .detail-left img.w-100:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 25px 50px rgba(24, 90, 157, 0.25);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(24, 90, 157, 0.25);
 }
 
 /* 2. Tipografi Premium (Gradient pada Heading & Animasi Garis Bawah) */
-.detail-left h2, .detail-left h3 {
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-orange));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
-    position: relative;
+.detail-left h2,
+.detail-left h3 {
+  background: linear-gradient(
+    135deg,
+    var(--primary-blue),
+    var(--accent-orange)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
 }
 
 .detail-left h2::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 50px;
-    height: 3px;
-    background-color: var(--accent-orange);
-    border-radius: 3px;
-    transition: width 0.4s ease;
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent-orange);
+  border-radius: 3px;
+  transition: width 0.4s ease;
 }
 
 .detail-left h2:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* 3. Animasi Interaktif untuk List (Daftar Fitur) */
 .detail-left ul {
-    list-style-type: none !important; /* Override inline styling */
-    padding-left: 0 !important;
+  list-style-type: none !important; /* Override inline styling */
+  padding-left: 0 !important;
 }
 
 .detail-left ul li {
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 16px;
-    transition: transform 0.3s ease, color 0.3s ease;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    color: var(--text-gray);
-    font-weight: 600;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 16px;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: var(--text-gray);
+  font-weight: 600;
 }
 
 .detail-left ul li::before {
-    content: '\f058'; /* Ikon FontAwesome (Check Circle) */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    position: absolute;
-    left: 0;
-    top: 5px;
-    color: var(--accent-orange);
-    font-size: 1.2rem;
-    transition: transform 0.4s ease, color 0.4s ease;
+  content: "\f058"; /* Ikon FontAwesome (Check Circle) */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 5px;
+  color: var(--accent-orange);
+  font-size: 1.2rem;
+  transition:
+    transform 0.4s ease,
+    color 0.4s ease;
 }
 
 .detail-left ul li:hover {
-    transform: translateX(12px);
-    color: var(--primary-blue) !important;
+  transform: translateX(12px);
+  color: var(--primary-blue) !important;
 }
 
 .detail-left ul li:hover::before {
-    transform: scale(1.2) rotate(360deg);
-    color: var(--primary-blue);
+  transform: scale(1.2) rotate(360deg);
+  color: var(--primary-blue);
 }
 
 /* 4. Efek Glassmorphism di Sidebar Kanan (Info Box) */
 .detail-right .info-kegiatan-box {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
 }
 
 .detail-right .info-kegiatan-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--accent-orange));
 }
 
 .detail-right .info-kegiatan-box:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(24, 90, 157, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(24, 90, 157, 0.15);
 }
 
 /* Animasi Ikon Sidebar saat Hover Baris */
 .detail-right .info-table td i {
-    transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .detail-right .info-table tr {
-    transition: background-color 0.3s ease;
-    border-radius: 8px;
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
 }
 
 .detail-right .info-table tr:hover {
-    background-color: rgba(24, 90, 157, 0.03);
+  background-color: rgba(24, 90, 157, 0.03);
 }
 
 .detail-right .info-table tr:hover td i {
-    transform: scale(1.4) rotate(15deg);
-    color: var(--accent-orange) !important;
+  transform: scale(1.4) rotate(15deg);
+  color: var(--accent-orange) !important;
 }
 
 /* Tombol / Badge Pilar Sistem Mengkilap */
 .detail-right .kuota-bar {
-    background: linear-gradient(135deg, var(--primary-blue), #4facfe) !important;
-    box-shadow: 0 8px 15px rgba(79, 172, 254, 0.3);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(135deg, var(--primary-blue), #4facfe) !important;
+  box-shadow: 0 8px 15px rgba(79, 172, 254, 0.3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .detail-right .kuota-bar:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 20px rgba(79, 172, 254, 0.5);
+  transform: scale(1.05);
+  box-shadow: 0 12px 20px rgba(79, 172, 254, 0.5);
 }
 
 /* 5. Header Background Ornament (Pulse Effect) */
 .detail-page-header {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .detail-page-header::after {
-    content: '';
-    position: absolute;
-    right: -10%;
-    top: -50%;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
-    border-radius: 50%;
-    animation: pulse 6s infinite alternate;
+  content: "";
+  position: absolute;
+  right: -10%;
+  top: -50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  border-radius: 50%;
+  animation: pulse 6s infinite alternate;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(1.2); opacity: 1; }
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
 }
 
 /* 6. Hapus Celah Putih Ornamen Gelombang */
 .scenery-ornament {
-    line-height: 0;
-    display: block;
+  line-height: 0;
+  display: block;
 }
 .scenery-ornament svg {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
 }

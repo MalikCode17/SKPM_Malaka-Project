@@ -1,280 +1,391 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Beranda Sistem Pendaftaran Kegiatan Mahasiswa MALAKA - Temukan dan ikuti berbagai kegiatan kampus.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Beranda Sistem Pendaftaran Kegiatan Mahasiswa MALAKA - Temukan dan ikuti berbagai kegiatan kampus."
+    />
     <title>Beranda - Sistem Pendaftaran Kegiatan Mahasiswa MALAKA</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="CSS/styles.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- ===== NAVIGASI ===== -->
     <header class="navbar" role="banner">
-        <div class="container navbar-inner">
-            <a href="index.html" class="logo" aria-label="Beranda MALAKA">
-                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
+      <div class="container navbar-inner">
+        <a href="index.html" class="logo" aria-label="Beranda MALAKA">
+          <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+          <span>Sistem Pendaftaran Kegiatan Mahasiswa</span>
+        </a>
+
+        <input
+          type="checkbox"
+          id="navToggle"
+          class="nav-toggle"
+          aria-hidden="true"
+        />
+        <label
+          for="navToggle"
+          class="hamburger"
+          aria-label="Buka menu navigasi"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="nav-menu" role="navigation" aria-label="Menu utama">
+          <div class="mobile-menu-header">
+            <a href="index.html" class="mobile-logo">
+              <i class="fas fa-graduation-cap"></i> SPKM
             </a>
+            <label for="navToggle" class="close-menu"
+              ><i class="fas fa-times"></i
+            ></label>
+          </div>
+          <div id="mobileProfileBlock"></div>
 
-            <input type="checkbox" id="navToggle" class="nav-toggle" aria-hidden="true">
-            <label for="navToggle" class="hamburger" aria-label="Buka menu navigasi">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-
-            <nav class="nav-menu" role="navigation" aria-label="Menu utama">
-                <div class="mobile-menu-header">
-                    <a href="index.html" class="mobile-logo">
-                        <i class="fas fa-graduation-cap"></i> SPKM
-                    </a>
-                    <label for="navToggle" class="close-menu"><i class="fas fa-times"></i></label>
-                </div>
-                <div id="mobileProfileBlock"></div>
-                
-                <ul>
-                    <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-home nav-icon"></i> Beranda</a></li>
-                    <li><a href="04-kegiatan.html"><i class="fas fa-calendar-alt nav-icon"></i> Kegiatan</a></li>
-                    <li><a href="05-pendaftaran.html"><i class="fas fa-clipboard-list nav-icon"></i> Pendaftaran</a></li>
-                    <li><a href="06-tentang.html"><i class="fas fa-info-circle nav-icon"></i> Tentang</a></li>
-                    <li><a href="07-kontak.html"><i class="fas fa-phone-alt nav-icon"></i> Kontak</a></li>
-                    <li><a href="01-login.html" class="btn btn-orange nav-login-btn" id="btn-logout">Logout</a></li>
-                </ul>
-            
-            </nav>
-        </div>
+          <ul>
+            <li>
+              <a href="index.html" class="active" aria-current="page"
+                ><i class="fas fa-home nav-icon"></i> Beranda</a
+              >
+            </li>
+            <li>
+              <a href="kegiatan.html"
+                ><i class="fas fa-calendar-alt nav-icon"></i> Kegiatan</a
+              >
+            </li>
+            <li>
+              <a href="pendaftaran.html"
+                ><i class="fas fa-clipboard-list nav-icon"></i> Pendaftaran</a
+              >
+            </li>
+            <li>
+              <a href="tentang.html"
+                ><i class="fas fa-info-circle nav-icon"></i> Tentang</a
+              >
+            </li>
+            <li>
+              <a href="kontak.html"
+                ><i class="fas fa-phone-alt nav-icon"></i> Kontak</a
+              >
+            </li>
+            <li>
+              <a
+                href="login.html"
+                class="btn btn-orange nav-login-btn"
+                id="btn-logout"
+                >Logout</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- ===== KONTEN UTAMA ===== -->
     <main id="main-content">
-
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-heading">
-            <div class="container hero-inner">
-                <div class="hero-content">
-                    <h1 id="hero-heading">
-                        Bergabunglah Dalam<br>Berbagai Kegiatan Mahasiswa
-                    </h1>
-                    <p>
-                        Platform digital untuk memudahkan mahasiswa dalam melihat dan mendaftar
-                        berbagai kegiatan kampus seperti seminar, workshop, lomba, dan organisasi mahasiswa.
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="04-kegiatan.html" class="btn btn-blue" id="btn-lihat-kegiatan">
-                            <i class="fas fa-list" aria-hidden="true"></i> Lihat Kegiatan
-                        </a>
-                        <a href="05-pendaftaran.html" class="btn btn-orange" id="btn-daftar-sekarang">
-                            <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar Sekarang
-                        </a>
-                    </div>
-                </div>
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-heading">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1 id="hero-heading">
+              Bergabunglah Dalam<br />Berbagai Kegiatan Mahasiswa
+            </h1>
+            <p>
+              Platform digital untuk memudahkan mahasiswa dalam melihat dan
+              mendaftar berbagai kegiatan kampus seperti seminar, workshop,
+              lomba, dan organisasi mahasiswa.
+            </p>
+            <div class="hero-buttons">
+              <a
+                href="kegiatan.html"
+                class="btn btn-blue"
+                id="btn-lihat-kegiatan"
+              >
+                <i class="fas fa-list" aria-hidden="true"></i> Lihat Kegiatan
+              </a>
+              <a
+                href="pendaftaran.html"
+                class="btn btn-orange"
+                id="btn-daftar-sekarang"
+              >
+                <i class="fas fa-pencil-alt" aria-hidden="true"></i> Daftar
+                Sekarang
+              </a>
             </div>
-            <div class="hero-wave" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
-                    <path fill="#ffffff" fill-opacity="1"
-                        d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z">
-                    </path>
-                </svg>
-            </div>
-        </section>
+          </div>
+        </div>
+        <div class="hero-wave" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 160">
+            <path
+              fill="#ffffff"
+              fill-opacity="1"
+              d="M0,128L60,117.3C120,107,240,85,360,96C480,107,600,149,720,144C840,139,960,85,1080,74.7C1200,64,1320,96,1380,112L1440,128L1440,160L1380,160C1320,160,1200,160,1080,160C960,160,840,160,720,160C600,160,480,160,360,160C240,160,120,160,60,160L0,160Z"
+            ></path>
+          </svg>
+        </div>
+      </section>
 
-        <!-- Kategori Kegiatan -->
-        <section class="categories" aria-labelledby="kategori-heading">
-            <div class="container">
-                <h2 class="section-title" id="kategori-heading">Informasi Kegiatan Kampus</h2>
-                <div class="categories-grid">
-                    <article class="category-card">
-                        <div class="icon-circle icon-1" aria-hidden="true">
-                            <i class="fas fa-chalkboard-teacher"></i>
-                        </div>
-                        <h3>Seminar &amp; Workshop</h3>
-                    </article>
-                    <article class="category-card">
-                        <div class="icon-circle icon-2" aria-hidden="true">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3>Lomba Akademik</h3>
-                    </article>
-                    <article class="category-card">
-                        <div class="icon-circle icon-3" aria-hidden="true">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Organisasi Mahasiswa</h3>
-                    </article>
-                    <article class="category-card">
-                        <div class="icon-circle icon-4" aria-hidden="true">
-                            <i class="fas fa-puzzle-piece"></i>
-                        </div>
-                        <h3>Pelatihan Soft Skill</h3>
-                    </article>
-                </div>
-            </div>
-        </section>
+      <!-- Kategori Kegiatan -->
+      <section class="categories" aria-labelledby="kategori-heading">
+        <div class="container">
+          <h2 class="section-title" id="kategori-heading">
+            Informasi Kegiatan Kampus
+          </h2>
+          <div class="categories-grid">
+            <article class="category-card">
+              <div class="icon-circle icon-1" aria-hidden="true">
+                <i class="fas fa-chalkboard-teacher"></i>
+              </div>
+              <h3>Seminar &amp; Workshop</h3>
+            </article>
+            <article class="category-card">
+              <div class="icon-circle icon-2" aria-hidden="true">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <h3>Lomba Akademik</h3>
+            </article>
+            <article class="category-card">
+              <div class="icon-circle icon-3" aria-hidden="true">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3>Organisasi Mahasiswa</h3>
+            </article>
+            <article class="category-card">
+              <div class="icon-circle icon-4" aria-hidden="true">
+                <i class="fas fa-puzzle-piece"></i>
+              </div>
+              <h3>Pelatihan Soft Skill</h3>
+            </article>
+          </div>
+        </div>
+      </section>
 
-        <!-- Daftar Kegiatan Terbaru -->
-        <section class="activities" aria-labelledby="kegiatan-heading">
-            <div class="container">
-                <h2 class="section-title" id="kegiatan-heading">Kegiatan Terbaru</h2>
-                <div class="activities-grid">
+      <!-- Daftar Kegiatan Terbaru -->
+      <section class="activities" aria-labelledby="kegiatan-heading">
+        <div class="container">
+          <h2 class="section-title" id="kegiatan-heading">Kegiatan Terbaru</h2>
+          <div class="activities-grid">
+            <article class="activity-card">
+              <h3>Workshop Logika &amp; DOM JavaScript</h3>
+              <ul class="activity-details">
+                <li>
+                  <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                  <span>12 Mei 2026</span>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>Lab Komputer 2</span>
+                </li>
+                <li>
+                  <i class="fas fa-users" aria-hidden="true"></i>
+                  <span>Kuota: 45 Peserta</span>
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  href="#"
+                  class="btn btn-orange btn-daftar-trigger"
+                  data-id="ACT002"
+                  >Daftar</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-blue btn-detail-trigger"
+                  data-id="ACT002"
+                  >Detail</a
+                >
+              </div>
+            </article>
 
-                    <article class="activity-card">
-                        <h3>Workshop Logika &amp; DOM JavaScript</h3>
-                        <ul class="activity-details">
-                            <li>
-                                <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                <span>12 Mei 2026</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                <span>Lab Komputer 2</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-users" aria-hidden="true"></i>
-                                <span>Kuota: 45 Peserta</span>
-                            </li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT002">Daftar</a>
-                            <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT002">Detail</a>
-                        </div>
-                    </article>
+            <article class="activity-card">
+              <h3>Seminar Kewirausahaan</h3>
+              <ul class="activity-details">
+                <li>
+                  <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                  <span>15 Juli 2026</span>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>Gedung Serba Guna</span>
+                </li>
+                <li>
+                  <i class="fas fa-lock" aria-hidden="true"></i>
+                  <span>Kuota: <span class="text-red">Penuh</span></span>
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a href="#" class="btn btn-outline-blue" aria-disabled="true">
+                  <i class="fas fa-lock" aria-hidden="true"></i> Penuh
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-blue btn-detail-trigger"
+                  data-id="ACT003"
+                  >Detail</a
+                >
+              </div>
+            </article>
 
-                    <article class="activity-card">
-                        <h3>Seminar Kewirausahaan</h3>
-                        <ul class="activity-details">
-                            <li>
-                                <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                <span>15 Juli 2026</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                <span>Gedung Serba Guna</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-lock" aria-hidden="true"></i>
-                                <span>Kuota: <span class="text-red">Penuh</span></span>
-                            </li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-outline-blue" aria-disabled="true">
-                                <i class="fas fa-lock" aria-hidden="true"></i> Penuh
-                            </a>
-                            <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT003">Detail</a>
-                        </div>
-                    </article>
+            <article class="activity-card">
+              <h3>Lomba Desain Poster Nasional</h3>
+              <ul class="activity-details">
+                <li>
+                  <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                  <span>5 Agustus 2026</span>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>Online</span>
+                </li>
+                <li>
+                  <i class="fas fa-users" aria-hidden="true"></i>
+                  <span>Kuota: Tidak Terbatas</span>
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  href="#"
+                  class="btn btn-orange btn-daftar-trigger"
+                  data-id="ACT006"
+                  >Daftar</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-blue btn-detail-trigger"
+                  data-id="ACT006"
+                  >Detail</a
+                >
+              </div>
+            </article>
 
-                    <article class="activity-card">
-                        <h3>Lomba Desain Poster Nasional</h3>
-                        <ul class="activity-details">
-                            <li>
-                                <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                <span>5 Agustus 2026</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                <span>Online</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-users" aria-hidden="true"></i>
-                                <span>Kuota: Tidak Terbatas</span>
-                            </li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT006">Daftar</a>
-                            <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT006">Detail</a>
-                        </div>
-                    </article>
+            <article class="activity-card">
+              <h3>Pelatihan Public Speaking</h3>
+              <ul class="activity-details">
+                <li>
+                  <i class="far fa-calendar-alt" aria-hidden="true"></i>
+                  <span>5 Agustus 2026</span>
+                </li>
+                <li>
+                  <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                  <span>Auditorium</span>
+                </li>
+                <li>
+                  <i class="fas fa-users" aria-hidden="true"></i>
+                  <span>Kuota: 25 Peserta</span>
+                </li>
+              </ul>
+              <div class="card-actions">
+                <a
+                  href="#"
+                  class="btn btn-orange btn-daftar-trigger"
+                  data-id="ACT010"
+                  >Daftar</a
+                >
+                <a
+                  href="#"
+                  class="btn btn-blue btn-detail-trigger"
+                  data-id="ACT010"
+                  >Detail</a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
-                    <article class="activity-card">
-                        <h3>Pelatihan Public Speaking</h3>
-                        <ul class="activity-details">
-                            <li>
-                                <i class="far fa-calendar-alt" aria-hidden="true"></i>
-                                <span>5 Agustus 2026</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                                <span>Auditorium</span>
-                            </li>
-                            <li>
-                                <i class="fas fa-users" aria-hidden="true"></i>
-                                <span>Kuota: 25 Peserta</span>
-                            </li>
-                        </ul>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-orange btn-daftar-trigger" data-id="ACT010">Daftar</a>
-                            <a href="#" class="btn btn-blue btn-detail-trigger" data-id="ACT010">Detail</a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="cta-section" aria-labelledby="cta-heading">
-            <div class="container cta-content">
-                <h2 id="cta-heading">Ayo Ikuti Berbagai Kegiatan Mahasiswa Sekarang!</h2>
-                <div class="cta-buttons">
-                    <a href="04-kegiatan.html" class="btn btn-blue" id="btn-cta-kegiatan">
-                        <i class="fas fa-search" aria-hidden="true"></i> Jelajahi Kegiatan
-                    </a>
-                </div>
-            </div>
-            <div class="scenery-ornament" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" preserveAspectRatio="none"
-                    style="height: 150px;">
-                    <path fill="#34d399" opacity="0.5"
-                        d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"></path>
-                    <path fill="#10b981" opacity="0.8"
-                        d="M0,200 C200,100 500,250 800,120 C1100,-10 1300,150 1440,160 L1440,200 L0,200 Z"></path>
-                    <path fill="#2d3748"
-                        d="M0,200 C400,150 800,250 1200,160 C1350,130 1400,180 1440,190 L1440,200 L0,200 Z"></path>
-                </svg>
-            </div>
-        </section>
-
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-heading">
+        <div class="container cta-content">
+          <h2 id="cta-heading">
+            Ayo Ikuti Berbagai Kegiatan Mahasiswa Sekarang!
+          </h2>
+          <div class="cta-buttons">
+            <a
+              href="kegiatan.html"
+              class="btn btn-blue"
+              id="btn-cta-kegiatan"
+            >
+              <i class="fas fa-search" aria-hidden="true"></i> Jelajahi Kegiatan
+            </a>
+          </div>
+        </div>
+        <div class="scenery-ornament" aria-hidden="true">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 200"
+            preserveAspectRatio="none"
+            style="height: 150px"
+          >
+            <path
+              fill="#34d399"
+              opacity="0.5"
+              d="M0,150 C300,50 600,200 900,100 C1200,0 1400,100 1440,120 L1440,200 L0,200 Z"
+            ></path>
+            <path
+              fill="#10b981"
+              opacity="0.8"
+              d="M0,200 C200,100 500,250 800,120 C1100,-10 1300,150 1440,160 L1440,200 L0,200 Z"
+            ></path>
+            <path
+              fill="#2d3748"
+              d="M0,200 C400,150 800,250 1200,160 C1350,130 1400,180 1440,190 L1440,200 L0,200 Z"
+            ></path>
+          </svg>
+        </div>
+      </section>
     </main>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-info">
-                <div class="footer-item">
-                    <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                    <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
-                </div>
-                <div class="footer-item">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                    <span>malaka.education@kampus.ac.id</span>
-                </div>
-                <div class="footer-item">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                    <span>@malaka.edu</span>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.</p>
+      <div class="container">
+        <div class="footer-info">
+          <div class="footer-item">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            <span>Wellington Square, Oxford OX1 2JD, Inggris Raya</span>
+          </div>
+          <div class="footer-item">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            <span>malaka.education@kampus.ac.id</span>
+          </div>
+          <div class="footer-item">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+            <span>@malaka.edu</span>
+          </div>
         </div>
+        <p class="copyright">
+          &copy; 2026 Sistem Kegiatan Mahasiswa MALAKA. Semua hak dilindungi.
+        </p>
+      </div>
     </footer>
 
     <!-- Scroll To Top Button -->
-    <button id="btn-scroll-top" class="btn-scroll-top" aria-label="Kembali ke atas">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    <button
+      id="btn-scroll-top"
+      class="btn-scroll-top"
+      aria-label="Kembali ke atas"
+    >
+      <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
 
     <script src="js/storage.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/main.js"></script>
-</body>
-
+  </body>
 </html>

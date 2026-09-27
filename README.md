@@ -9,6 +9,7 @@ Halaman Utama
 07-kontak.html
 
 CSS
+
 - styles.css
 
 Ricky Yudianto (Anggota)
@@ -29,9 +30,9 @@ Sub Halaman Detail Kegiatan
 04-detail-pelatihan.html
 
 CSS
+
 - styles_kegiatan.css
 - styles_detail.css
-
 
 Malikul Sholeh Rangkuti (Anggota)
 
@@ -55,11 +56,10 @@ Sub Halaman Tim Kami
 00-lihat-tim-kami.html
 
 CSS
+
 - styles_pendaftaran.css
 - styles_tim_kami.css
 - styles_keunggulan_platform.css
-
-
 
 Kontribusi Tugas Masing-Masing Sebelum UAS:
 
@@ -69,13 +69,11 @@ Edy Kevin Feryanto Purba
 - Bagian yang dikerjakan meliputi halaman Login, Registrasi, Profil Pengguna, CSS utama website, serta JavaScript untuk proses autentikasi dan penyimpanan data pengguna.
 - Fitur utama yang dikembangkan meliputi validasi login, registrasi akun baru, serta pengelolaan sesi pengguna menggunakan Local Storage.
 
-
 Ricky Yudianto
 
 - Bertanggung jawab mengembangkan modul kegiatan.
 - Bagian yang dikerjakan meliputi halaman daftar kegiatan, halaman detail kegiatan, CSS modul kegiatan, serta JavaScript yang mengatur tampilan dan interaksi pada modul tersebut.
 - Fitur yang dikembangkan memungkinkan pengguna melihat daftar kegiatan, membaca informasi secara lengkap, dan berpindah menuju halaman pendaftaran.
-
 
 Malikul Sholeh Rangkuti
 

@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Portal MALAKA</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Nunito", sans-serif;
+        background: linear-gradient(135deg, #fdfbfb 0%, #f3eee7 100%);
+      }
+      .admin-layout {
+        display: flex;
+        min-height: 100vh;
+      }
+      
+      /* Sidebar */
+      .sidebar {
+        width: 260px;
+        background: #192132; /* Dark navy */
+        color: white;
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      .sidebar .logo {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #fbd38d; /* Gold */
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 40px;
+      }
+      .sidebar .logo i {
+        font-size: 1.6rem;
+      }
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        flex: 1;
+      }
+      .sidebar-menu li {
+        margin-bottom: 10px;
+      }
+      .sidebar-menu li a {
+        display: flex;
+        align-items: center;
+        padding: 12px 18px;
+        color: #94a3b8;
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+      .sidebar-menu li a:hover,
+      .sidebar-menu li a.active {
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+      .sidebar-menu li a i {
+        width: 24px;
+        font-size: 1.1rem;
+      }
+      .sidebar-footer {
+        font-size: 0.8rem;
+        color: #64748b;
+        text-align: left;
+        padding-top: 20px;
+      }
+
+      /* Main Content */
+      .admin-content {
+        flex: 1;
+        padding: 40px 50px;
+        overflow-y: auto;
+        position: relative;
+      }
+      
+      /* Background pattern */
+      .admin-content::before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+        background-size: 30px 30px;
+        opacity: 0.3;
+        z-index: -1;
+      }
+
+      .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+      }
+      .admin-header h1 {
+        margin: 0;
+        font-size: 2.2rem;
+        color: #1e293b;
+        font-family: 'Playfair Display', serif; /* Serif font for title matching image */
+      }
+      
+      .admin-profile-top {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .admin-profile-top .info {
+        text-align: right;
+      }
+      .admin-profile-top .info span {
+        display: block;
+      }
+      .admin-profile-top .info .greeting {
+        font-size: 0.85rem;
+        color: #64748b;
+      }
+      .admin-profile-top .info .role {
+        font-weight: 700;
+        color: #1e293b;
+      }
+      .admin-profile-top .avatar {
+        width: 45px;
+        height: 45px;
+        background: #1e293b;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 1.1rem;
+      }
+
+      /* Card styles */
+      .card-admin {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        padding: 25px;
+        margin-bottom: 24px;
+      }
+      .card-admin-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .card-admin-toolbar h2 {
+        margin: 0;
+        font-size: 1.3rem;
+        color: #1e293b;
+      }
+      .toolbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+      .search-box {
+        position: relative;
+      }
+      .search-box input {
+        padding: 8px 12px 8px 35px;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        outline: none;
+        width: 200px;
+        transition: border-color 0.2s;
+      }
+      .search-box input:focus {
+        border-color: #3b82f6;
+      }
+      .search-box i {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #94a3b8;
+      }
+      
+      .btn-export {
+        background: #238b55;
+        color: white;
+        border: none;
+        padding: 9px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+      }
+      .btn-export:hover {
+        background: #1c7346;
+      }
+
+      .table-info {
+        text-align: right;
+        font-size: 0.85rem;
+        color: #64748b;
+        margin-bottom: 15px;
+      }
+
+      /* Table Styles */
+      .table-responsive {
+        overflow-x: auto;
+        border: 1px solid #f1f5f9;
+        border-radius: 8px;
+      }
+      .table-admin {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .table-admin th,
+      .table-admin td {
+        padding: 12px 10px;
+        text-align: left;
+        border-bottom: 1px solid #f1f5f9;
+        color: #334155;
+        font-size: 0.9rem;
+      }
+      .table-admin th {
+        background: #f8fafc;
+        font-weight: 700;
+        color: #1e293b;
+        white-space: nowrap;
+      }
+      .table-admin th i {
+        color: #cbd5e1;
+        margin-left: 5px;
+        font-size: 0.8rem;
+      }
+      .table-admin tbody tr:hover {
+        background: #f8fafc;
+      }
+
+      /* Table specific column styles */
+      .user-cell {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .user-avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #64748b;
+      }
+      .user-avatar img {
+        width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      }
+      .user-name { font-weight: 700; color: #1e293b; }
+      
+      .stacked-cell strong { display: block; color: #1e293b; font-weight: 700; }
+      .stacked-cell span { display: block; font-size: 0.85rem; color: #64748b; margin-top: 4px; }
+
+      .status-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .status-verified {
+        background: #238b55;
+        color: white;
+      }
+
+      /* Pagination */
+      .pagination {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        margin-top: 15px;
+      }
+      .page-btn {
+        padding: 6px 12px;
+        border: 1px solid #e2e8f0;
+        background: white;
+        border-radius: 4px;
+        color: #64748b;
+        cursor: pointer;
+      }
+      .page-btn.active {
+        background: #e2e8f0;
+        color: #1e293b;
+        font-weight: bold;
+      }
+
+      /* Modal Styles */
+      .modal-overlay {
+          position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+          background: rgba(0,0,0,0.5); display: none;
+          justify-content: center; align-items: center; z-index: 1000;
+      }
+      .modal-content {
+          background: white; padding: 30px; border-radius: 12px; width: 500px;
+          max-width: 90%;
+      }
+      .modal-header {
+          display: flex; justify-content: space-between; margin-bottom: 20px;
+      }
+      .modal-header h3 { margin: 0; }
+      .close-modal {
+          background: none; border: none; font-size: 1.5rem; cursor: pointer;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .admin-layout {
+          flex-direction: column;
+        }
+        .sidebar {
+          width: 100%;
+          padding: 15px;
+        }
+        .sidebar .logo {
+          margin-bottom: 15px;
+        }
+        .sidebar-menu {
+          display: flex;
+          overflow-x: auto;
+          white-space: nowrap;
+        }
+        .sidebar-menu li {
+          margin-bottom: 0;
+          margin-right: 10px;
+        }
+        .admin-content {
+          padding: 20px;
+        }
+        .admin-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+        .card-admin-toolbar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 15px;
+        }
+        .toolbar-actions {
+          width: 100%;
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .search-box input {
+          width: 100%;
+        }
+        .modal-content {
+          width: 95%;
+          padding: 20px;
+        }
+        .table-responsive {
+          margin-top: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <a href="admin.html" class="logo">
+          <i class="fas fa-graduation-cap"></i> Admin MALAKA
+        </a>
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#" id="nav-kegiatan">
+              <i class="fas fa-calendar-alt"></i> Kelola Kegiatan
+            </a>
+          </li>
+          <li>
+            <a href="#" class="active" id="nav-peserta">
+              <i class="fas fa-users"></i> Data Pendaftar
+            </a>
+          </li>
+          <li>
+            <a href="#" id="nav-logout">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+          </li>
+        </ul>
+        <div class="sidebar-footer">
+          Versi Admin v1.2
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-content">
+        <div class="admin-header">
+          <h1 id="page-title">Data Pendaftar</h1>
+          <div class="admin-profile-top">
+            <div class="info">
+                <span class="greeting">Greetings,</span>
+                <span class="role">Admin Panitia</span>
+            </div>
+            <div class="avatar">AD</div>
+          </div>
+        </div>
+
+        <!-- View: Kelola Kegiatan -->
+        <div id="view-kegiatan" class="card-admin" style="display: none;">
+          <div class="card-admin-toolbar">
+            <h2>Daftar Kegiatan</h2>
+            <div class="toolbar-actions">
+                <button class="btn btn-blue" id="btn-add-kegiatan" style="padding: 8px 16px; border-radius:6px; border:none; cursor:pointer;">
+                  <i class="fas fa-plus"></i> Tambah Kegiatan
+                </button>
+            </div>
+          </div>
+          <div class="table-responsive">
+            <table class="table-admin" id="table-kegiatan">
+              <thead>
+                <tr>
+                  <th>ID <i class="fas fa-sort"></i></th>
+                  <th>Nama Kegiatan <i class="fas fa-sort"></i></th>
+                  <th>Kategori <i class="fas fa-sort"></i></th>
+                  <th>Tanggal <i class="fas fa-sort"></i></th>
+                  <th>Kuota <i class="fas fa-sort"></i></th>
+                  <th>Status <i class="fas fa-sort"></i></th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Diisi oleh JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- View: Data Pendaftar -->
+        <div id="view-peserta" class="card-admin">
+          <div class="card-admin-toolbar">
+            <h2>Data Pendaftar Mahasiswa</h2>
+            <div class="toolbar-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+                <button class="btn-export" id="btn-export-csv">
+                  <i class="fas fa-file-csv"></i> Export CSV
+                </button>
+            </div>
+          </div>
+          <div class="table-info" id="pendaftar-info">
+            Showing 1-1 of 1 Pendaftar
+          </div>
+          <div class="table-responsive">
+            <table class="table-admin" id="table-peserta">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Nama Mahasiswa <i class="fas fa-sort"></i></th>
+                  <th>Email/NIM User <i class="fas fa-sort"></i></th>
+                  <th>ID Acara <i class="fas fa-sort"></i></th>
+                  <th>Tanggal Daftar <i class="fas fa-sort"></i></th>
+                  <th>Status <i class="fas fa-sort"></i></th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Diisi oleh JS -->
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="pagination">
+              <button class="page-btn">Previous</button>
+              <button class="page-btn active">1</button>
+              <button class="page-btn">Next</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    
+    <!-- Modal Tambah/Edit -->
+    <div class="modal-overlay" id="modal-kegiatan">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Tambah Kegiatan</h3>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <form id="form-kegiatan">
+                <input type="hidden" id="edit-index" value="-1">
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom: 5px;">ID Kegiatan</label>
+                    <input type="text" id="k-id" required style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom: 5px;">Nama Kegiatan</label>
+                    <input type="text" id="k-nama" required style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom: 5px;">Kategori</label>
+                    <select id="k-kategori" required style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                        <option value="Seminar & Workshop">Seminar & Workshop</option>
+                        <option value="Lomba Akademik">Lomba Akademik</option>
+                        <option value="Organisasi Mahasiswa">Organisasi Mahasiswa</option>
+                        <option value="Pelatihan Soft Skill">Pelatihan Soft Skill</option>
+                    </select>
+                </div>
+                <div class="form-group" style="margin-bottom: 15px;">
+                    <label style="display:block; margin-bottom: 5px;">Tanggal</label>
+                    <input type="text" id="k-tanggal" required style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                </div>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display:block; margin-bottom: 5px;">Kuota</label>
+                    <input type="text" id="k-kuota" required style="width: 100%; padding: 8px; border: 1px solid #cbd5e1; border-radius: 4px;">
+                </div>
+                <button type="submit" class="btn btn-blue w-100" style="padding:10px; border:none; border-radius:6px;">Simpan Data</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Detail Pendaftar -->
+    <div class="modal-overlay" id="modal-peserta">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="margin: 0;">Detail Pendaftaran Mahasiswa</h3>
+                <button class="close-modal" id="close-modal-peserta">&times;</button>
+            </div>
+            <div id="peserta-detail-body" style="font-size: 0.95rem; color: #334155; line-height: 1.6;">
+                <!-- Diisi oleh JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>

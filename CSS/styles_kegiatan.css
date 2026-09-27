@@ -5,171 +5,178 @@
 
 /* 1. Header Filter Section (Gradient & Glass) */
 .kegiatan-header-section {
-    background: linear-gradient(135deg, var(--primary-blue), #2475c0) !important;
-    padding: 30px 0;
-    position: relative;
-    overflow: visible;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    z-index: 10;
+  background: linear-gradient(135deg, var(--primary-blue), #2475c0) !important;
+  padding: 30px 0;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 /* 2. Filter Kategori Dropdown (Premium UI) */
 .filter-box {
-    background: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    color: white !important;
-    padding: 14px 24px !important;
-    border-radius: 50px !important;
-    transition: all 0.4s ease !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+  padding: 14px 24px !important;
+  border-radius: 50px !important;
+  transition: all 0.4s ease !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .filter-box:hover {
-    background: rgba(255, 255, 255, 0.25) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  background: rgba(255, 255, 255, 0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .filter-box i {
-    color: white !important;
+  color: white !important;
 }
 
 .kategori-dropdown {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.8) !important;
-    border-radius: 12px !important;
-    box-shadow: 0 15px 35px rgba(24, 90, 157, 0.15) !important;
-    overflow: hidden;
-    transform-origin: top center;
-    transition: none !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 15px 35px rgba(24, 90, 157, 0.15) !important;
+  overflow: hidden;
+  transform-origin: top center;
+  transition: none !important;
 }
 
 .kategori-dropdown li a {
-    padding: 12px 24px !important;
-    color: var(--text-dark) !important;
-    transition: all 0.3s ease !important;
-    font-weight: 600 !important;
-    position: relative;
-    z-index: 1;
+  padding: 12px 24px !important;
+  color: var(--text-dark) !important;
+  transition: all 0.3s ease !important;
+  font-weight: 600 !important;
+  position: relative;
+  z-index: 1;
 }
 
 .kategori-dropdown li a::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; width: 0; height: 100%;
-    background: var(--bg-light-blue);
-    z-index: -1;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--bg-light-blue);
+  z-index: -1;
+  transition: width 0.3s ease;
 }
 
 .kategori-dropdown li a:hover {
-    color: var(--primary-blue) !important;
-    padding-left: 30px !important;
+  color: var(--primary-blue) !important;
+  padding-left: 30px !important;
 }
 
 .kategori-dropdown li a:hover::before {
-    width: 100%;
+  width: 100%;
 }
 
 /* 3. Activity Cards (Kartu Kegiatan WOW Effect) */
 .activities-grid {
-    gap: 30px !important;
+  gap: 30px !important;
 }
 
 .activity-card {
-    background: white;
-    border-radius: 16px !important;
-    border: 1px solid var(--border-color) !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04) !important;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease !important;
-    overflow: hidden;
-    position: relative;
-    padding: 30px 24px 24px 24px !important;
-    z-index: 1;
+  background: white;
+  border-radius: 16px !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04) !important;
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.4s ease !important;
+  overflow: hidden;
+  position: relative;
+  padding: 30px 24px 24px 24px !important;
+  z-index: 1;
 }
 
-
-
 .activity-card:hover::before {
-    height: 100%;
-    opacity: 0.03; /* Memberikan hint warna gradien ke seluruh background card saat hover */
+  height: 100%;
+  opacity: 0.03; /* Memberikan hint warna gradien ke seluruh background card saat hover */
 }
 
 /* 4. Tipografi & Ikon Kartu Kegiatan */
 .activity-card h3 {
-    font-size: 1.3rem !important;
-    font-weight: 800 !important;
-    color: var(--text-dark) !important;
-    margin-bottom: 16px !important;
-    line-height: 1.4 !important;
-    transition: color 0.3s ease;
+  font-size: 1.3rem !important;
+  font-weight: 800 !important;
+  color: var(--text-dark) !important;
+  margin-bottom: 16px !important;
+  line-height: 1.4 !important;
+  transition: color 0.3s ease;
 }
 
 .activity-card:hover h3 {
-    color: var(--primary-blue) !important;
+  color: var(--primary-blue) !important;
 }
 
 .activity-details li {
-    transition: transform 0.3s ease, color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
 }
 
 .activity-card:hover .activity-details li {
-    transform: translateX(5px);
+  transform: translateX(5px);
 }
 
 .activity-details li i {
-    color: var(--accent-orange) !important;
-    transition: transform 0.3s ease;
+  color: var(--accent-orange) !important;
+  transition: transform 0.3s ease;
 }
 
 .activity-card:hover .activity-details li i {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 /* 5. Badge Status Premium */
 .badge-status {
-    position: absolute !important;
-    top: 20px !important;
-    right: -10px !important;
-    padding: 6px 16px !important;
-    border-radius: 20px 0 0 20px !important;
-    font-size: 0.75rem !important;
-    font-weight: 800 !important;
-    letter-spacing: 1px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15) !important;
-    z-index: 2;
-    transition: right 0.3s ease;
+  position: absolute !important;
+  top: 20px !important;
+  right: -10px !important;
+  padding: 6px 16px !important;
+  border-radius: 20px 0 0 20px !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important;
+  z-index: 2;
+  transition: right 0.3s ease;
 }
 
 .activity-card:hover .badge-status {
-    right: 0 !important;
+  right: 0 !important;
 }
 
 /* 6. Animasi Tombol Card */
 .card-actions {
-    margin-top: 24px !important;
-    border-top: 1px dashed var(--border-color) !important;
-    padding-top: 20px !important;
+  margin-top: 24px !important;
+  border-top: 1px dashed var(--border-color) !important;
+  padding-top: 20px !important;
 }
 
 .card-actions .btn {
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
 }
 
 .card-actions .btn:hover {
-    transform: translateY(-3px) !important;
+  transform: translateY(-3px) !important;
 }
 
 .card-actions .btn-orange:hover {
-    box-shadow: 0 8px 20px rgba(248, 158, 27, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(248, 158, 27, 0.4) !important;
 }
 
 .card-actions .btn-blue:hover {
-    box-shadow: 0 8px 20px rgba(24, 90, 157, 0.4) !important;
+  box-shadow: 0 8px 20px rgba(24, 90, 157, 0.4) !important;
 }
